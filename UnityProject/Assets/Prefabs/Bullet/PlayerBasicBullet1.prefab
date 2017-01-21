@@ -122,6 +122,8 @@ MonoBehaviour:
   BasePower: 5
   Speed: 3000
   ShotSE: 25
+  hitEffectPrefab: {fileID: 1909174970392754, guid: bb7d5c479663c4841851dbb1d0ad6e8d,
+    type: 2}
 --- !u!222 &222654103274389898
 CanvasRenderer:
   m_ObjectHideFlags: 1
