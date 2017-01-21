@@ -2,36 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicBullet : MonoBehaviour, IBullet
+public class BasicBullet : BulletBase
 {
-	[SerializeField] float requireEnergy;
-	public float RequireEnergy { get { return requireEnergy; } }
-	public float BasePower;
-	public float Speed;
-
-	public float CurrentPower
-	{
-		get { return BasePower * multipliePower; }
-	}
-
-	private float multipliePower;
-	private Transform trans;
-	private Transform target;
-	private Vector2 direction;
-
 	private Rigidbody2D bulletRigidbody;
-	
-	public void Init(Transform target, float multipliePower)
-	{
-		this.target = target;
-		this.multipliePower = multipliePower;
-	}
-
-	public void Init(Vector2 direction, float multipliePower)
-	{
-		this.multipliePower = multipliePower;
-		this.direction = direction;
-	}
 
 	void SetSize()
 	{
@@ -40,7 +13,8 @@ public class BasicBullet : MonoBehaviour, IBullet
 
 	void Start()
 	{
-		trans = transform;
+		OnStart();
+
 		SetSize();
 		bulletRigidbody = GetComponent<Rigidbody2D>();
 		bulletRigidbody.AddForce(direction * Speed);
@@ -48,8 +22,7 @@ public class BasicBullet : MonoBehaviour, IBullet
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		var damage = CurrentPower * multipliePower;
-		Debug.Log(string.Format("{0}にあたった", other.name, damage) );
+		Debug.Log(string.Format("{0}にあたった", other.name, CurrentPower) );
 		Destroy(this.gameObject);
 	}
 }

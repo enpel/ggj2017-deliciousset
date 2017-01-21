@@ -7,7 +7,6 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 {
 	public List<GameObject> bulletPrefabs;
 	public List<BulletData> bulletDatas;
-	public SoundId shotSE;
 
 	public class BulletData
 	{
@@ -53,7 +52,6 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 		var selectedBullet = bulletDatas.FindLast(bulletData => bulletData.Bullet.RequireEnergy <= CurrentEnegry);
 
 		Debug.Log("shot" + CurrentEnegry+ " " + selectedBullet.Prefab);
-		SoundManager.Instance.Play (shotSE);
 
 		var parent = this.transform.parent;
 		var prefab = GameObject.Instantiate<GameObject>(selectedBullet.Prefab, parent);
