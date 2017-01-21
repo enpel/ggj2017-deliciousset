@@ -11,6 +11,10 @@ public class Enemy : MonoBehaviour
 
 	[SerializeField]
 	private float attackArea; // 攻撃する範囲
+	[SerializeField]
+	private SoundId deadSE; // やられた時に鳴る音
+	[SerializeField]
+	private GameObject deadEffectPrefab; // やられた時に出るエフェクト
 
 	private Transform target;
 	private Transform trans;
@@ -22,10 +26,21 @@ public class Enemy : MonoBehaviour
 		hp = GetComponent<Hp>();
 
 		hp.IsDead.Where(dead => dead)
-			.Subscribe(dead =>
-			{
-				Destroy(gameObject);
-			});
+			.Subscribe(_ => OnDead());
+	}
+
+	void OnDead()
+	{
+		if (deadEffectPrefab != null)
+		{
+			var go = GameObject.Instantiate(deadEffectPrefab);
+			var effectTrans = go.transform;
+			effectTrans.SetParent(transform.parent);	// 弾は消えるので親オブジェクトに関連付ける
+			effectTrans.localPosition = transform.localPosition;
+			effectTrans.localScale = Vector3.one;
+		}
+		deadSE.Play();
+		Destroy(gameObject);
 	}
 
 	void Start()

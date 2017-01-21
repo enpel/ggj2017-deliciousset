@@ -86,6 +86,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackArea: 14
+  deadSE: 11
+  deadEffectPrefab: {fileID: 0}
 --- !u!114 &114464319942007448
 MonoBehaviour:
   m_ObjectHideFlags: 1
