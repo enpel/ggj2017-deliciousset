@@ -24,8 +24,6 @@ public class BasicBullet : BulletBase
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log(string.Format("{0}にあたった", other.name, CurrentPower) );
-
 		if (hitEffectPrefab != null)
 		{
 			var go = GameObject.Instantiate(hitEffectPrefab);

@@ -39,4 +39,9 @@ public class Hp : MonoBehaviour
 	{
 		UpdateHP(CurrentHP.Value + recovery);
 	}
+
+	public string ToDisplayString()
+	{
+		return string.Format("HP({0}/{1})", CurrentHP, MaxHP);
+	}
 }
