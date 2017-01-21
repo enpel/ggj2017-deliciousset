@@ -12,6 +12,12 @@ public class Player : MonoBehaviour
 	{
 		weapon = GetComponent<PlayerWeapon>();
 		hp = GetComponent<Hp>();
+
+		hp.IsDead.Where(dead => dead)
+				.Subscribe(dead =>
+				{
+					Debug.Log("Playerがやられたので、多分ゲームオーバーだと思う。");
+				});
 	}
 
 	void Start()
@@ -22,6 +28,9 @@ public class Player : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log(other.name + "にあたった" );
+		var bullet = other.GetComponent<BulletBase>();
+		var damage = bullet.CurrentPower;
+		hp.OnDamage(damage);
+		Debug.Log(string.Format("{0}は{1}に{2}ポイントのダメージ{3}", other.name, gameObject.name, damage, hp.ToDisplayString()));
 	}
 }
