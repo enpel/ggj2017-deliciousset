@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BasicBullet : BulletBase
 {
+	[SerializeField] GameObject hitEffectPrefab;
+
 	private Rigidbody2D bulletRigidbody;
 
 	void SetSize()
@@ -23,6 +25,16 @@ public class BasicBullet : BulletBase
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		Debug.Log(string.Format("{0}にあたった", other.name, CurrentPower) );
+
+		if (hitEffectPrefab != null)
+		{
+			var go = GameObject.Instantiate(hitEffectPrefab);
+			var effectTrans = go.transform;
+			effectTrans.SetParent(transform.parent);	// 弾は消えるので親オブジェクトに関連付ける
+			effectTrans.localPosition = transform.localPosition;
+			effectTrans.localScale = Vector3.one;
+		}
+
 		Destroy(this.gameObject);
 	}
 }
