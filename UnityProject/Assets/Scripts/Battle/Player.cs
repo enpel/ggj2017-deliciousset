@@ -5,11 +5,11 @@ using UniRx;
 
 public class Player : MonoBehaviour
 {
-	IWeapon weapon;
+	public PlayerWeapon weapon { get; private set; }
 
 	void Awake()
 	{
-		weapon = GetComponent<IWeapon>();
+		weapon = GetComponent<PlayerWeapon>();
 	}
 
 	void Start()
