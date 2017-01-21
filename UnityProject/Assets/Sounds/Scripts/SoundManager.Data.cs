@@ -13,7 +13,7 @@ public enum SoundId
 
 	BgmEnd,
 	SeStart,
-	SeNone,
+	ggj_se22,
 
 	SeEnd,
 	None,
