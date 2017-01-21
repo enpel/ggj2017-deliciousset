@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224571430229132858}
   - component: {fileID: 114745250364624280}
+  - component: {fileID: 58445810227205256}
+  - component: {fileID: 50598361657590332}
   m_Layer: 5
   m_Name: PlayerBasicBullet2
   m_TagString: Untagged
@@ -44,6 +46,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!50 &50598361657590332
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1216474593591098}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &58445810227205256
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1216474593591098}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 100
 --- !u!114 &114640082408731414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requireEnergy: 1
   BasePower: 15
-  Speed: 8
+  Speed: 500
 --- !u!222 &222654103274389898
 CanvasRenderer:
   m_ObjectHideFlags: 1
