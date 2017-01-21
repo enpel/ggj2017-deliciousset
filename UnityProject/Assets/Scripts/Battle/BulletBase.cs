@@ -37,4 +37,9 @@ public class BulletBase  : MonoBehaviour, IBullet
 		trans = transform;
 		ShotSE.Play();
 	}
+
+	void OnBecameInvisible()
+	{
+		Destroy (this.gameObject);
+	}
 }
