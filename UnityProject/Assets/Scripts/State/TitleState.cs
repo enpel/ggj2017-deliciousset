@@ -22,4 +22,8 @@ public class TitleState : SceneState
 		}
 	}
 
+	public override void End ()
+	{
+	}
+
 }

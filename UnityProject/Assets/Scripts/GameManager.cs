@@ -15,10 +15,15 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
 	// Use this for initialization
 	void Start () {
-		State.Value = defaultState;
-		State.Subscribe (state => {
-			state.Initialize();
+		uiManager.SwitchPhase (UIPhase.NONE);
+		State.Pairwise().Subscribe(statePair => {
+			if (statePair.Previous != null)
+				statePair.Previous.End();
+			if (statePair.Current != null)
+				statePair.Current.Initialize();
 		}).AddTo (this);
+
+		State.Value = defaultState;
 	}
 		
 }
@@ -26,4 +31,5 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 public interface IState
 {
 	void Initialize();
+	void End();
 }

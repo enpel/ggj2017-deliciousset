@@ -9,4 +9,9 @@ public class SceneState : MonoBehaviour, IState {
 		
 	}
 
+	public virtual void End()
+	{
+
+	}
+
 }
