@@ -10,6 +10,7 @@ public enum SoundId
 {
 	BgmStart,
 	ggj01_01,
+	ggj01_02,
 
 	BgmEnd,
 	SeStart,

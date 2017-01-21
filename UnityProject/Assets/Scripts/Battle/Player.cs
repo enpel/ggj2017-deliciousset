@@ -18,7 +18,9 @@ public class Player : MonoBehaviour
 	void Start()
 	{
 		MyInput.GetInputStream()
-			.Subscribe(x => weapon.Shot());
+			.Where(x => !hp.IsDead.Value)
+			.Subscribe(x => weapon.Shot())
+			.AddTo(this);
 	}
 
 	void OnTriggerEnter2D(Collider2D other)

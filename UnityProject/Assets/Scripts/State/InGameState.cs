@@ -13,8 +13,11 @@ public class InGameState : SceneState
 	Transform defaultPlayerPosition;
 	[SerializeField]
 	Transform defaultEnemySpawnPosition;
+	[SerializeField]
+	WaveManager waveManager;
 	IObservable<Unit> battleStartStream;
 	Player player;
+	public ReactiveProperty<int> ClearWaveCount = new ReactiveProperty<int>(0);
 
 	public override void Initialize()
 	{
@@ -27,9 +30,16 @@ public class InGameState : SceneState
 		player.transform.localPosition = Vector3.zero;
 		player.transform.localScale = Vector3.one;
 
+		// GameOver
 		player.hp.IsDead.Where(isDead => isDead).Subscribe (isDead => {
-				GameManager.Instance.State.Value = nextState;
+			GameManager.Instance.State.Value = nextState;
 		}).AddTo (this);
+
+		// Clear Wave
+		waveManager.SpawnNextWave ().First(x => x).Subscribe(x => {
+			GameManager.Instance.State.Value = nextState;
+		});
+
 	}
 
 	public override void End()
