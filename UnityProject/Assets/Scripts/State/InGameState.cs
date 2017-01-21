@@ -7,14 +7,6 @@ using System.Linq;
 
 public class InGameState : SceneState
 {
-	[Serializable]
-	public class WaveBGM
-	{
-		public int waveRank;
-		public SoundId soundId;
-	}
-	[SerializeField]
-	float threatPerSecond = 45;
 	[SerializeField]
 	SceneState gameOverState;
 	[SerializeField]
@@ -26,7 +18,7 @@ public class InGameState : SceneState
 	[SerializeField]
 	WaveManager waveManager;
 	[SerializeField]
-	List<WaveBGM> waveBGM = new List<WaveBGM> ();
+	List<ThreatData> threatData = new List<ThreatData>();
 
 	Player player;
 	public ReactiveProperty<int> ClearWaveCount = new ReactiveProperty<int>(0);
@@ -65,24 +57,35 @@ public class InGameState : SceneState
 
 	IEnumerator WaveCoroutine()
 	{
-		float time = 0;
+		float totalTime = 0;
 		ThreatRank currentRank = ThreatRank.Rank1;
-		var step = this.WaveStep.Value;
-		var bgm = waveBGM.Where (x => x.waveRank == step % 2).ToArray ();
-		var selectedBGM = bgm.ElementAt (UnityEngine.Random.Range (0, bgm.Count ()));
-		SoundManager.Instance.StopBgm ();
-		SoundManager.Instance.Play (selectedBGM.soundId);
 
+		var currentThreatData = threatData.FirstOrDefault (x => x.Data.rank == currentRank);
 		// 仮！！！！
+		float spawnTime = 0;
+		float lastTime = Time.time;
 		while (currentRank != ThreatRank.EndIt && !player.hp.IsDead.Value) {
-			time += Time.deltaTime;
-			Debug.Log ("time: " +time);
-			if (time > 1) {
+			Debug.Log ("totalTime: " + totalTime);
+			var deltaTime = Time.time - lastTime;
+			lastTime = Time.time;
+			totalTime += deltaTime;
+			spawnTime += deltaTime;
+
+			if (spawnTime > currentThreatData.Data.spawnRate) {
 				waveManager.SpawnCurrentThreatWave ();
-				time -= 1;
+				spawnTime -= currentThreatData.Data.spawnRate;
 			}
-			if (time > 30)
-				currentRank = ThreatRank.EndIt;
+
+			if (totalTime > currentThreatData.Data.lifeTime) {
+				currentRank = currentThreatData.Data.next;
+				totalTime = 0;
+				currentThreatData = threatData.FirstOrDefault (x => x.Data.rank == currentRank);
+
+				var id = currentThreatData.Data.bgmIds.ElementAtOrDefault (UnityEngine.Random.Range (0, currentThreatData.Data.bgmIds.Count));
+
+				SoundManager.Instance.Play (id);
+			}
+
 			yield return new WaitForSeconds(0.1f);
 		}
 	}
