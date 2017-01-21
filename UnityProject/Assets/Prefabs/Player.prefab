@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114191673097282980}
   - component: {fileID: 114246097355157372}
   - component: {fileID: 114878134570749140}
+  - component: {fileID: 58599159595501182}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -65,6 +66,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!58 &58599159595501182
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1012489138715940}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 50
 --- !u!114 &114191673097282980
 MonoBehaviour:
   m_ObjectHideFlags: 1
