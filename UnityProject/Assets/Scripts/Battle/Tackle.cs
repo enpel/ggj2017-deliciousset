@@ -18,6 +18,7 @@ public class Tackle : BulletBase
 			effectTrans.localScale = Vector3.one;
 		}
 
+		HitSE.Play();
 		Destroy(shooter.gameObject);
 		Destroy(this.gameObject);
 	}

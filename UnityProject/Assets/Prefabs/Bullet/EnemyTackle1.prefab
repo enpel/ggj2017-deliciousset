@@ -77,7 +77,8 @@ MonoBehaviour:
   requireEnergy: 0.5
   BasePower: 1
   Speed: 0
-  ShotSE: 16
+  ShotSE: 29
+  HitSE: 16
   hitEffectPrefab: {fileID: 0}
 --- !u!224 &224571430229132858
 RectTransform:

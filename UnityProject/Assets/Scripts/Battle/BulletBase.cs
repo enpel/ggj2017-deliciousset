@@ -9,6 +9,7 @@ public class BulletBase : MonoBehaviour, IBullet
 	public float BasePower;
 	public float Speed;
 	public SoundId ShotSE;
+	public SoundId HitSE;
 
 	public float CurrentPower
 	{

@@ -33,6 +33,8 @@ public class BasicBullet : BulletBase
 			effectTrans.localScale = Vector3.one;
 		}
 
+		HitSE.Play();
+
 		Destroy(this.gameObject);
 	}
 }

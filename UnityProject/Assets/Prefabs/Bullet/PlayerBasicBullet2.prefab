@@ -121,7 +121,8 @@ MonoBehaviour:
   requireEnergy: 1
   BasePower: 15
   Speed: 500
-  ShotSE: 15
+  ShotSE: 24
+  HitSE: 27
   hitEffectPrefab: {fileID: 1074870613806596, guid: 99341abecbf3f264f9c43515fe2077ad,
     type: 2}
 --- !u!222 &222654103274389898
