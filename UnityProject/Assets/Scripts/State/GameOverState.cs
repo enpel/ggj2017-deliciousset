@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
+using UnityEngine.SceneManagement;
 
 public class GameOverState : SceneState
 {

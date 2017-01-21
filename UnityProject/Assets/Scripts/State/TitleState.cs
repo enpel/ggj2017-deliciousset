@@ -20,6 +20,8 @@ public class TitleState : SceneState
 				GameManager.Instance.State.Value = nextState;
 			}).AddTo (this);
 		}
+
+		SoundManager.Instance.Play (SoundId.ggj01_01);
 	}
 
 	public override void End ()

@@ -19,7 +19,12 @@ public class Tackle : BulletBase
 		}
 
 		HitSE.Play();
-		Destroy(shooter.gameObject);
+
 		Destroy(this.gameObject);
+		Hp hp = shooter.gameObject.GetComponent<Hp> ();
+		if (hp != null)
+			hp.OnDamage(hp.MaxHP);
+		else 
+			Destroy(shooter.gameObject);
 	}
 }

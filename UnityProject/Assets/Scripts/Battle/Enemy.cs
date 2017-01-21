@@ -26,7 +26,8 @@ public class Enemy : MonoBehaviour
 		hp = GetComponent<Hp>();
 
 		hp.IsDead.Where(dead => dead)
-			.Subscribe(_ => OnDead());
+			.Subscribe(_ => OnDead())
+			.AddTo(this);
 	}
 
 	void OnDead()

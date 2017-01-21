@@ -19,7 +19,7 @@ public class BattleHP : MonoBehaviour {
 				float p = f / player.hp.MaxHP;
 				rt.localScale = new Vector3 (p, 1, 1);
 			}
-		);
+		).AddTo(this);
 	}
 	
 	// Update is called once per frame

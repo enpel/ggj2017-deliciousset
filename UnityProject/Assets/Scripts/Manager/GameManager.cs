@@ -11,6 +11,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 	[SerializeField]
 	SceneState defaultState;
 
+
 	public ReactiveProperty<IState> State = new ReactiveProperty<IState>();
 
 	// Use this for initialization
