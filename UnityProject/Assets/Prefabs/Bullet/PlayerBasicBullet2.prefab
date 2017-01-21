@@ -121,6 +121,7 @@ MonoBehaviour:
   requireEnergy: 1
   BasePower: 15
   Speed: 500
+  ShotSE: 15
 --- !u!222 &222654103274389898
 CanvasRenderer:
   m_ObjectHideFlags: 1

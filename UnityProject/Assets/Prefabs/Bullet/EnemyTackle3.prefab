@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224750867293537502}
+  - component: {fileID: 114640724800986302}
   - component: {fileID: 58068801288854000}
   - component: {fileID: 50661142999440770}
-  - component: {fileID: 114640724800986302}
   m_Layer: 11
   m_Name: EnemyTackle3
   m_TagString: Enemy
@@ -76,6 +76,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requireEnergy: 0
   BasePower: 3
+  Speed: 0
+  ShotSE: 16
 --- !u!224 &224750867293537502
 RectTransform:
   m_ObjectHideFlags: 1
