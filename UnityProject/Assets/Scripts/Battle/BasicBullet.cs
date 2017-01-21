@@ -46,7 +46,7 @@ public class BasicBullet : MonoBehaviour, IBullet
 		bulletRigidbody.AddForce(direction * Speed);
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		var damage = CurrentPower * multipliePower;
 		Debug.Log(string.Format("{0}にあたった", other.name, damage) );

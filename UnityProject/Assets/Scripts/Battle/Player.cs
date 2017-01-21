@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 			.Subscribe(x => weapon.Shot());
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		Debug.Log(other.name + "にあたった" );
 	}

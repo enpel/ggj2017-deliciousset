@@ -26,7 +26,7 @@ public class Tackle : MonoBehaviour, IBullet
 		this.multipliePower = multipliePower;
 	}
 		
-	void OnTriggerEnter(Collider other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		var damage = CurrentPower * multipliePower;
 		Debug.Log(string.Format("{0}にあたった", other.name, damage) );
