@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 114191673097282980}
   - component: {fileID: 114246097355157372}
   - component: {fileID: 114878134570749140}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 224118057194035402}
   - component: {fileID: 222052800411471758}
   - component: {fileID: 114442737714122792}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 114493937958455604}
   - component: {fileID: 114938096858719000}
   - component: {fileID: 114319507769957622}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Power
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,6 +91,7 @@ MonoBehaviour:
   - {fileID: 1216474593591098, guid: 6a7c94f0d93084615905f38fd66f5377, type: 2}
   - {fileID: 1216474593591098, guid: b793d939109db49149602eb7dc340b32, type: 2}
   - {fileID: 1216474593591098, guid: 60c6eaaae42f54b108873f36dbf57f6c, type: 2}
+  shotSE: 0
   MaxEnegry: 5
   BaseEnegryChargeRate: 2
 --- !u!114 &114319507769957622
