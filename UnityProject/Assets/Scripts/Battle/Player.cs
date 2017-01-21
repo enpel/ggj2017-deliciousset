@@ -17,4 +17,9 @@ public class Player : MonoBehaviour
 		MyInput.GetInputStream()
 			.Subscribe(x => weapon.Shot());
 	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		Debug.Log(other.name + "にあたった" );
+	}
 }

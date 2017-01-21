@@ -55,6 +55,8 @@ GameObject:
   - component: {fileID: 224210426015576742}
   - component: {fileID: 222552160909060154}
   - component: {fileID: 114493937958455604}
+  - component: {fileID: 114938096858719000}
+  - component: {fileID: 114319507769957622}
   m_Layer: 5
   m_Name: Power
   m_TagString: Untagged
@@ -84,8 +86,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f9245c19ab7429e96e9ab1e50d7d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefabs:
+  - {fileID: 1216474593591098, guid: 6a7c94f0d93084615905f38fd66f5377, type: 2}
+  - {fileID: 1216474593591098, guid: b793d939109db49149602eb7dc340b32, type: 2}
+  - {fileID: 1216474593591098, guid: 60c6eaaae42f54b108873f36dbf57f6c, type: 2}
   MaxEnegry: 5
   BaseEnegryChargeRate: 2
+--- !u!114 &114319507769957622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1219826587050736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b119bc45ae73dd459d37e89590fc26a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114442737714122792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,6 +157,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114938096858719000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1219826587050736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b119bc45ae73dd459d37e89590fc26a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &222052800411471758
 CanvasRenderer:
   m_ObjectHideFlags: 1
