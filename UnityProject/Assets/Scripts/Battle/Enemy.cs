@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,10 +14,19 @@ public class Enemy : MonoBehaviour
 		weapon = GetComponent<IWeapon>();
 		move = GetComponent<Move>();
 		hp = GetComponent<Hp>();
+
+		hp.IsDead.Where(dead => dead)
+			.Subscribe(dead =>
+			{
+				Destroy(gameObject);
+			});
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		Debug.Log(other.name + "にあたった" );
+		var bullet = other.GetComponent<BulletBase>();
+		var damage = bullet.CurrentPower;
+		hp.OnDamage(damage);
 	}
 }
