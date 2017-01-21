@@ -13,7 +13,34 @@ public enum SoundId
 
 	BgmEnd,
 	SeStart,
+
+	ggj_se01,
+	ggj_se02,
+	ggj_se03,
+	ggj_se04,
+	ggj_se05,
+	ggj_se06,
+	ggj_se07,
+	ggj_se08,
+	ggj_se09,
+	ggj_se10,
+	ggj_se11,
+	ggj_se12,
+	ggj_se13,
+	ggj_se14,
+	ggj_se15,
+	ggj_se16,
+	ggj_se17,
+	ggj_se18,
+	ggj_se19,
+	ggj_se20,
+	ggj_se21,
+	/// <summary>
+	/// 弾１として使う
+	/// </summary>
 	ggj_se22,
+	ggj_se23,
+	ggj_se24,
 
 	SeEnd,
 	None,
