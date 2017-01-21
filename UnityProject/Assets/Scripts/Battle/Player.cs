@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 				.Subscribe(dead =>
 				{
 					Debug.Log("Playerがやられたので、多分ゲームオーバーだと思う。");
+					this.GetComponent<Collider2D>().enabled = false;
 				});
 	}
 
