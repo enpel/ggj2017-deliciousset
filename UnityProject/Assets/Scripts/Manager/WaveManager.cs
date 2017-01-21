@@ -4,27 +4,77 @@ using UnityEngine;
 using UniRx;
 using System;
 using System.Linq;
+using UnityEditor;
 
 public class WaveManager : MonoBehaviour {
 
-	[Serializable]
-	public class EnemySpawnData
-	{
-		public EnemyManager.EnemyId enemyId;
-		public Vector3 spawnLocalPosition;
-	}
 
 	[SerializeField]
 	Transform spawnPosition;
 	[SerializeField]
-	List<EnemySpawnData> wave = new List<EnemySpawnData> ();
+	List<EnemyWaveData> waves = new List<EnemyWaveData> ();
+	EnemyWave currentEnemyWave;
+	public ReactiveProperty<ThreatRank> CurrentThreatRank = new ReactiveProperty<ThreatRank> (ThreatRank.Rank1);
 
-	public List<Enemy> SpawnNextWave(int step)
+	void Start()
 	{
-		return wave.Select (x => {
-			var enemy = EnemyManager.Instance.SpawnEnemy(x.enemyId, spawnPosition);
-			enemy.transform.localPosition = x.spawnLocalPosition;
-			return enemy;
-		}).ToList();
+		CurrentThreatRank.Subscribe (rank => {
+			currentEnemyWave = waves.FirstOrDefault(x => x.Data.rank == rank).Data;
+		}).AddTo (this);
+	}
+
+	public List<Enemy> SpawnCurrentThreatWave()
+	{
+		var region = RandomRegionByCurrentThreat ();
+		List<Enemy> enemies = new List<Enemy> ();
+		region.spawnData.ForEach (spawn => {
+			enemies.Add(SpawnEnemy(spawn));
+		});
+
+		return enemies;
+	}
+
+	private EnemyRegion RandomRegionByCurrentThreat()
+	{
+		var region = currentEnemyWave.regions.ElementAtOrDefault (UnityEngine.Random.Range(0, currentEnemyWave.regions.Count));
+		return region.Data;
+	}
+
+	private Enemy SpawnEnemy(EnemySpawnData spawnData)
+	{
+		var enemy = EnemyManager.Instance.SpawnEnemy(spawnData.enemyId, spawnPosition);
+		enemy.transform.localPosition = spawnData.spawnLocalPosition * 100;
+		return enemy;
 	}
 }
+
+public enum ThreatRank
+{
+	Rank1,
+	Rank2,
+	Rank3,
+	EndIt,
+	Max
+}
+
+[Serializable]
+public class EnemyWave
+{
+	public ThreatRank rank;
+	public List<EnemyRegionData> regions = new List<EnemyRegionData> ();
+}
+
+[Serializable]
+public class EnemyRegion
+{
+	public List<EnemySpawnData> spawnData = new List<EnemySpawnData> ();
+}
+
+[Serializable]
+public class EnemySpawnData
+{
+	public EnemyManager.EnemyId enemyId;
+	public Vector3 spawnLocalPosition;
+}
+
+

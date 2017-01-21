@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a339a2e2cbfb2436597a535f801fca2e, type: 3}
+  m_Name: EnemyRegion
+  m_EditorClassIdentifier: 
+  _data:
+    spawnData:
+    - enemyId: 0
+      spawnLocalPosition: {x: 0, y: 0, z: 0}
+    - enemyId: 0
+      spawnLocalPosition: {x: 1, y: 0, z: 0}
+    - enemyId: 0
+      spawnLocalPosition: {x: 2, y: 0, z: 0}
+    - enemyId: 0
+      spawnLocalPosition: {x: 3, y: 0, z: 0}
+    - enemyId: 0
+      spawnLocalPosition: {x: 4, y: 0, z: 0}

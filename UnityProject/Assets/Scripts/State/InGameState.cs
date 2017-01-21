@@ -14,6 +14,8 @@ public class InGameState : SceneState
 		public SoundId soundId;
 	}
 	[SerializeField]
+	float threatPerSecond = 45;
+	[SerializeField]
 	SceneState gameOverState;
 	[SerializeField]
 	GameObject playerPrefab;
@@ -63,22 +65,24 @@ public class InGameState : SceneState
 
 	IEnumerator WaveCoroutine()
 	{
+		float time = 0;
+		ThreatRank currentRank = ThreatRank.Rank1;
 		var step = this.WaveStep.Value;
 		var bgm = waveBGM.Where (x => x.waveRank == step % 2).ToArray ();
 		var selectedBGM = bgm.ElementAt (UnityEngine.Random.Range (0, bgm.Count ()));
 		SoundManager.Instance.StopBgm ();
 		SoundManager.Instance.Play (selectedBGM.soundId);
 
-		var waveEnemies = waveManager.SpawnNextWave (WaveStep.Value);
-		int aliveEnemyCount = waveEnemies.Count;
-		waveEnemies.ForEach (x => {
-			x.hp.IsDead.First (isDead => isDead).Subscribe (isDead => {
-				aliveEnemyCount--;
-			});
-		});
-
-
-		while (aliveEnemyCount > 0 && !player.hp.IsDead.Value) {
+		// 仮！！！！
+		while (currentRank != ThreatRank.EndIt && !player.hp.IsDead.Value) {
+			time += Time.deltaTime;
+			Debug.Log ("time: " +time);
+			if (time > 1) {
+				waveManager.SpawnCurrentThreatWave ();
+				time -= 1;
+			}
+			if (time > 30)
+				currentRank = ThreatRank.EndIt;
 			yield return new WaitForSeconds(0.1f);
 		}
 	}
