@@ -122,7 +122,7 @@ MonoBehaviour:
   BasePower: 30
   Speed: 1500
   ShotSE: 22
-  hitEffectPrefab: {fileID: 1074870613806596, guid: 5d7c72882789a5045845b8f863c6416d,
+  hitEffectPrefab: {fileID: 1074870613806596, guid: 31d863f2a1e15f3478b0d0f0dec2fde2,
     type: 2}
 --- !u!222 &222654103274389898
 CanvasRenderer:
