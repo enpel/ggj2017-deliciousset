@@ -16,9 +16,6 @@ public enum UIPhase
 }
 public class UIManager : SingletonMonoBehaviour<UIManager> {
 
-	[SerializeField]
-	UIPhase iniitalPhase = UIPhase.INGAME;
-
 	// Use this for initialization
 	public GameObject group_title;
 	public GameObject group_ingame;
@@ -32,10 +29,6 @@ public class UIManager : SingletonMonoBehaviour<UIManager> {
 	IObservable<Unit> onClickStart;
 	IObservable<Unit> onClickRetry;
 	IObservable<Unit> onClickBackToTitle;
-
-	void Start () {
-		SwitchPhase (iniitalPhase);
-	}
 
 	public IObservable<Unit> GetOnClickStartStream()
 	{
