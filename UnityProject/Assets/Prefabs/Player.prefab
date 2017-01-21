@@ -106,7 +106,6 @@ MonoBehaviour:
   - {fileID: 1216474593591098, guid: 6a7c94f0d93084615905f38fd66f5377, type: 2}
   - {fileID: 1216474593591098, guid: b793d939109db49149602eb7dc340b32, type: 2}
   - {fileID: 1216474593591098, guid: 60c6eaaae42f54b108873f36dbf57f6c, type: 2}
-  shotSE: 0
   MaxEnegry: 5
   BaseEnegryChargeRate: 2
 --- !u!114 &114319507769957622
@@ -185,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d2704bb2a2540b4ac951416a45c110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 100
+  MaxHP: 5
 --- !u!114 &114938096858719000
 MonoBehaviour:
   m_ObjectHideFlags: 1
