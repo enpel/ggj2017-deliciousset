@@ -51,8 +51,6 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 	{
 		var selectedBullet = bulletDatas.FindLast(bulletData => bulletData.Bullet.RequireEnergy <= CurrentEnegry);
 
-		Debug.Log("shot" + CurrentEnegry+ " " + selectedBullet.Prefab);
-
 		var parent = this.transform.parent;
 		var prefab = GameObject.Instantiate<GameObject>(selectedBullet.Prefab, parent);
 		prefab.transform.localPosition = this.transform.localPosition;
@@ -60,7 +58,7 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 		var bullet = prefab.GetComponent<IBullet>();
 		var power = CurrentEnegry / MaxEnegry;
 		var direction = new Vector2(1, 0);
-		bullet.Init(direction, power);
+		bullet.Init(transform, direction, power);
 
 		CurrentEnegry = 0;
 	}

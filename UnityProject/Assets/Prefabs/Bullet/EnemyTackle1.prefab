@@ -62,7 +62,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 100
+  m_Radius: 16
 --- !u!114 &114620528538667096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,10 +74,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb54efe0dcbe6463c8efbb9ab31c040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requireEnergy: 0
+  requireEnergy: 0.5
   BasePower: 1
   Speed: 0
   ShotSE: 16
+  hitEffectPrefab: {fileID: 0}
 --- !u!224 &224571430229132858
 RectTransform:
   m_ObjectHideFlags: 1

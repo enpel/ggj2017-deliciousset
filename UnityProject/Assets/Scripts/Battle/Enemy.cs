@@ -9,6 +9,12 @@ public class Enemy : MonoBehaviour
 	public Move move{get; private set;}
 	public Hp hp {get; private set;}
 
+	[SerializeField]
+	private float attackArea; // 攻撃する範囲
+
+	private Transform target;
+	private Transform trans;
+
 	void Awake()
 	{
 		weapon = GetComponent<IWeapon>();
@@ -20,6 +26,24 @@ public class Enemy : MonoBehaviour
 			{
 				Destroy(gameObject);
 			});
+	}
+
+	void Start()
+	{
+		trans = transform;
+		target = GameObject.FindWithTag("Player").transform;
+	}
+
+	void Update()
+	{
+		if (target != null)
+		{
+			var sqrMagnitude = (trans.position - target.position).sqrMagnitude;
+			if (attackArea * attackArea > sqrMagnitude)
+			{
+				weapon.Shot();
+			}
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)

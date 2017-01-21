@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletBase  : MonoBehaviour, IBullet
+public class BulletBase : MonoBehaviour, IBullet
 {
 	[SerializeField] float requireEnergy;
 	public float RequireEnergy { get { return requireEnergy; } }
@@ -16,18 +16,21 @@ public class BulletBase  : MonoBehaviour, IBullet
 	}
 
 	protected float multipliePower;
+	protected Transform shooter;
 	protected Transform trans;
 	protected Transform target;
 	protected Vector2 direction;
 
-	public void Init(Transform target, float multipliePower)
+	public void Init(Transform shooter, Transform target, float multipliePower)
 	{
+		this.shooter = shooter;
 		this.target = target;
 		this.multipliePower = multipliePower;
 	}
 
-	public void Init(Vector2 direction, float multipliePower)
+	public void Init(Transform shooter, Vector2 direction, float multipliePower)
 	{
+		this.shooter = shooter;
 		this.multipliePower = multipliePower;
 		this.direction = direction;
 	}
