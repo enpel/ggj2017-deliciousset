@@ -11,6 +11,9 @@ public class BulletBase : MonoBehaviour, IBullet
 	public SoundId ShotSE;
 	public SoundId HitSE;
 
+	// 初期値は関係のない物を設定しておく…（ゴミ実装だ…）
+	public TechnologyType PowerTechnology = TechnologyType.EnegryChargeRate;
+
 	public float CurrentPower
 	{
 		get { return BasePower * multipliePower; }
