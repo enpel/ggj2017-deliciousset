@@ -79,7 +79,7 @@ public class InGameState : SceneState
 			spawnTime += deltaTime;
 
 			if (spawnTime > currentThreatData.Data.spawnRate) {
-				waveManager.SpawnCurrentThreatWave ().ForEach(x => x.hp.IsDead.First(isDead => isDead).Subscribe(isDead => GameManager.Instance.TechnologyManager.DevelopTechnology()));
+				waveManager.SpawnCurrentThreatWave ().ForEach(x => x.hp.IsDead.First(isDead => isDead).Subscribe());
 				spawnTime -= currentThreatData.Data.spawnRate;
 			}
 
