@@ -7,6 +7,17 @@ public class Tackle : BulletBase
 {
 	[SerializeField] GameObject hitEffectPrefab;
 
+	void Start()
+	{
+		OnStart();
+	}
+
+	void Update()
+	{
+		// 敵と同じ位置に移動する
+		trans.localPosition = shooter.localPosition;
+	}
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (hitEffectPrefab != null)

@@ -36,7 +36,11 @@ public class BasicEnemyWeapon : MonoBehaviour , IWeapon
 	{
 		var bullet = bulletPrefab.GetComponent<IBullet>();
 
-		if (CurrentEnegry < bullet.RequireEnergy) return;
+		if (CurrentEnegry < bullet.RequireEnergy) 
+		{
+			Debug.Log("エネルギーが足りなくて、タックルが打てませんでした");
+			return;
+		}
 
 		var parent = this.transform.parent;
 		var prefab = GameObject.Instantiate<GameObject>(bulletPrefab, parent);

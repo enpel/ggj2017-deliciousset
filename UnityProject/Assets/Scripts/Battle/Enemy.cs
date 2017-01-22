@@ -54,18 +54,7 @@ public class Enemy : MonoBehaviour
 	{
 		trans = transform;
 		target = GameObject.FindWithTag("Player").transform;
-	}
-
-	void Update()
-	{
-		if (target != null)
-		{
-			var sqrMagnitude = (trans.position - target.position).sqrMagnitude;
-			if (attackArea * attackArea > sqrMagnitude)
-			{
-				weapon.Shot();
-			}
-		}
+		weapon.Shot();
 	}
 
 	void OnTriggerEnter2D(Collider2D other)

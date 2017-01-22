@@ -63,7 +63,9 @@ public class BulletBase : MonoBehaviour, IBullet
 		if (trans == null) return;
 		if (this.gameObject == null) return;
 
-		if (trans.localPosition.x < -200 || trans.localPosition.x > 1500 )
+		var posX = trans.localPosition.x + trans.parent.localPosition.x;
+		// 画面外なら消す、んだけど敵は画面外からタックルしてくるので右端は1300の場所にした。
+		if (posX < -800 || posX > 1300)
 		{
 			Destroy (this.gameObject);
 		}
