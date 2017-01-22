@@ -23,7 +23,8 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 	public float MaxEnegry = 5;
 	public float BaseEnegryChargeRate = 2;
 
-	public float ChargeRateForTechnology {
+	public float ChargeRateForTechnology
+	{
 		get
 		{
 			return 1 + TechnologyManager.Instance.currentTechnologys[TechnologyType.EnegryChargeRate] * 0.1f;
