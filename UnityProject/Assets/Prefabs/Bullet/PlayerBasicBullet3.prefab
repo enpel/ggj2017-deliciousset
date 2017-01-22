@@ -118,11 +118,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aceb6c3c27ce45e48e479a66a76774a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TrailEffectPrefab: {fileID: 0}
   requireEnergy: 3
   BasePower: 30
   Speed: 1500
   ShotSE: 21
   HitSE: 22
+  Color: {r: 0.7809495, g: 0.9485294, b: 0.013948975, a: 1}
   PowerTechnology: 2
   OptionalTechnology: 5
   optionalBulletPrefab: {fileID: 1216474593591098, guid: 489ac22afeb3f45eb89dc45d700a264e,

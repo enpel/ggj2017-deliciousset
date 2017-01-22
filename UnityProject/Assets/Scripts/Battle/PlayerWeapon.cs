@@ -11,11 +11,11 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 	public class BulletData
 	{
 		public GameObject Prefab {get; private set;}
-		public IBullet Bullet {get; private set;}
+		public BulletBase Bullet {get; private set;}
 		public TechnologyType PowerTechnology {get; private set;}
 		public TechnologyType OptionalTechnology {get; private set;}
 
-		public BulletData(GameObject prefab, IBullet bullet, TechnologyType powerTechnology, TechnologyType optionalTechnology)
+		public BulletData(GameObject prefab, BulletBase bullet, TechnologyType powerTechnology, TechnologyType optionalTechnology)
 		{
 			Prefab = prefab;
 			Bullet = bullet;
@@ -26,6 +26,11 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 
 	public float MaxEnegry = 5;
 	public float BaseEnegryChargeRate = 2;
+	public BulletData CurrentBullet {
+		get{
+			return bulletDatas.FindLast(bulletData => bulletData.Bullet.RequireEnergy <= CurrentEnegry);
+		}
+	}
 
 	public float ChargeRateForTechnology
 	{
@@ -65,7 +70,7 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 
 	public void Shot()
 	{
-		var selectedBullet = bulletDatas.FindLast(bulletData => bulletData.Bullet.RequireEnergy <= CurrentEnegry);
+		var selectedBullet = CurrentBullet;
 
 		var technologyPower = 1 + TechnologyManager.Instance.currentTechnologys[selectedBullet.PowerTechnology] * 0.1f;
 		var optionalBulletNum = TechnologyManager.Instance.currentTechnologys[selectedBullet.OptionalTechnology];

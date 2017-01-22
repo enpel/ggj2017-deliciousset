@@ -124,6 +124,7 @@ MonoBehaviour:
   Speed: 3000
   ShotSE: 25
   HitSE: 26
+  Color: {r: 1, g: 1, b: 1, a: 1}
   PowerTechnology: 0
   OptionalTechnology: 3
   optionalBulletPrefab: {fileID: 1216474593591098, guid: d204b4755bfaf4538b1ed6c15ea21012,

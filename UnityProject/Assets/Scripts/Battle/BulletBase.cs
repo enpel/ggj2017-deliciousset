@@ -11,6 +11,7 @@ public class BulletBase : MonoBehaviour, IBullet
 	public float Speed;
 	public SoundId ShotSE;
 	public SoundId HitSE;
+	public Color Color;
 
 	// 初期値は関係のない物を設定しておく…（ゴミ実装だ…）
 	public TechnologyType PowerTechnology = TechnologyType.EnegryChargeRate;
