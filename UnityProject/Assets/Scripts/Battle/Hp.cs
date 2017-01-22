@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
+using UnityEngine.UI;
 
 public class Hp : MonoBehaviour
 {
 	public float MaxHP;
+	public float Rate { get { return CurrentHP.Value/MaxHP; }}
 
 	public ReactiveProperty<bool> IsDead = new ReactiveProperty<bool>();
 	void UpdateDeadState()
@@ -18,6 +20,7 @@ public class Hp : MonoBehaviour
 	{
 		CurrentHP.Value = Mathf.Clamp(newHP, 0, MaxHP);
 		UpdateDeadState();
+		UpdateGraphicsColor();
 	}
 
 	void Start()
@@ -43,5 +46,17 @@ public class Hp : MonoBehaviour
 	public string ToDisplayString()
 	{
 		return string.Format("HP({0}/{1})", CurrentHP, MaxHP);
+	}
+
+	void UpdateGraphicsColor()
+	{
+		//暗くなりすぎると見えないので、一番暗いときはalpha0.3f
+		var alpha = (Rate * 0.7f) + 0.3f;
+		foreach(var image in GetComponentsInChildren<Image>())
+		{
+			var color = image.color;
+			color.a = alpha;
+			image.color = color;
+		}
 	}
 }
