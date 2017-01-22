@@ -7,10 +7,13 @@ using Random = UnityEngine.Random;
 
 public enum TechnologyType
 {
-	PowerUpBasicBullet1,
+	PowerUpBasicBullet1,	// 威力アップ
 	PowerUpBasicBullet2,
 	PowerUpBasicBullet3,
-	EnegryChargeRate,
+	OptionalBasicBullet1,	// 弾数アップ
+	OptionalBasicBullet2,
+	OptionalBasicBullet3,
+	EnegryChargeRate,		// チャージ速度アップ
 }
 
 // テクノロジー
