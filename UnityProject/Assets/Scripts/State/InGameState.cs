@@ -36,6 +36,7 @@ public class InGameState : SceneState
 	{
 		ClearWaveCount.Value = 0;
 		WaveStep.Value = 0;
+		GameManager.Instance.Score.Value = 0;
 		UIManager.Instance.SwitchPhase (UIPhase.INGAME);
 
 		if (player != null)
