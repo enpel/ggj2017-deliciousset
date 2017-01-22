@@ -49,8 +49,6 @@ public class WaveBullet : BulletBase
 		var pos = new Vector3(0, force.y, 0);
 
 		transform.localPosition += pos;
-
-		Debug.Log(force);
 	}
 
 	void OnTriggerEnter2D(Collider2D other)

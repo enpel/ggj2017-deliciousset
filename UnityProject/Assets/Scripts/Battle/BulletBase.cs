@@ -58,6 +58,14 @@ public class BulletBase : MonoBehaviour, IBullet
 		ShotSE.Play();
 	}
 
+	void LateUpdate()
+	{
+		if (trans.localPosition.x < -200 || trans.localPosition.x > 1500 )
+		{
+			Destroy (this.gameObject);
+		}
+	}
+
 	void OnBecameInvisible()
 	{
 		Destroy (this.gameObject);
