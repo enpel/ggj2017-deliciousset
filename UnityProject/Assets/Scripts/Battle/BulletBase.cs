@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletBase : MonoBehaviour, IBullet
 {
+	public GameObject TrailEffectPrefab;
 	[SerializeField] float requireEnergy;
 	public float RequireEnergy { get { return requireEnergy; } }
 	public float BasePower;
@@ -39,6 +40,16 @@ public class BulletBase : MonoBehaviour, IBullet
 		this.shooter = shooter;
 		this.multipliePower = multipliePower;
 		this.direction = direction;
+	}
+
+	public void GenerateTrailEffectPrefab()
+	{
+		if (TrailEffectPrefab != null)
+		{
+			var parent = this.transform;
+			var prefab = GameObject.Instantiate<GameObject>(TrailEffectPrefab, parent);
+			prefab.transform.localPosition = this.transform.localPosition;
+		}
 	}
 
 	protected void OnStart()

@@ -2,11 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicBullet : BulletBase
+public class WaveBullet : BulletBase
 {
 	[SerializeField] GameObject hitEffectPrefab;
 
 	private Rigidbody2D bulletRigidbody;
+
+	public float Amplitude;
+	public float Frequency;
+	public float Phase;
+
+	private float time;
+
+	public void WaveInit(float amplitude, float frequency, float phase)
+	{
+		Amplitude = amplitude;
+		Frequency = frequency;
+		Phase = phase;
+	}
 
 	void SetSize()
 	{
@@ -20,8 +33,19 @@ public class BasicBullet : BulletBase
 		SetSize();
 		bulletRigidbody = GetComponent<Rigidbody2D>();
 		bulletRigidbody.AddForce(direction * Speed);
+		time = Phase;
 
 		GenerateTrailEffectPrefab();
+	}
+
+	void Update()
+	{
+		time += Time.deltaTime;
+
+		var scalar = Amplitude * Mathf.Sin(time * Frequency);
+		var force = new Vector2(0, 1) * scalar;
+
+		bulletRigidbody.AddForce(force);
 	}
 
 	void OnTriggerEnter2D(Collider2D other)

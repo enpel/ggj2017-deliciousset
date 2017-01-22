@@ -28,7 +28,7 @@ public class TechnologyManager : SingletonMonoBehaviour<TechnologyManager>
 		for(var i = 0; i < Enum.GetNames(typeof(TechnologyType)).Length; i++)
 		{
 			var type = (TechnologyType)i;
-			currentTechnologys.Add(type, 0);
+			currentTechnologys.Add(type, 5);
 		}
 	}
 

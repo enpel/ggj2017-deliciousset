@@ -72,23 +72,25 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 
 		// メインウェポン
 		var power = CurrentEnegry / MaxEnegry;
+		var mainBullet = InstantiateBullet(selectedBullet.Prefab);
+		var optionalBulletPrefab = mainBullet.optionalBulletPrefab;
 		var multipulPower = power * technologyPower;
 		{
 			var direction = new Vector2(1, 0);
-			var bullet = InstantiateBullet(selectedBullet.Prefab);
-			bullet.Init(transform, new Vector2(1, 0), multipulPower);
+			mainBullet.Init(transform, new Vector2(1, 0), multipulPower);
 		}
 
-		// オプショナルの弾を生成
-		for (var i = 0; i < optionalBulletNum; i++)
+		if (optionalBulletPrefab != null)
 		{
-			var degree = ((i + 1) / (float)optionalBulletNum) * 45;
-			var radian = Mathf.Deg2Rad * degree;
-			var direction = new Vector2(Mathf.Cos(radian), Mathf.Sin(radian));
-			var bullet = InstantiateBullet(selectedBullet.Prefab);
-			bullet.Init(transform, direction, multipulPower * 0.1f);
-			var rb = bullet.GetComponent<Rigidbody2D>();
-			rb.gravityScale = 1 * direction.y;
+			// オプショナルの弾を生成
+			for (var i = 0; i < optionalBulletNum; i++)
+			{
+				var bullet = InstantiateBullet(optionalBulletPrefab).GetComponent<WaveBullet>();
+				var direction = new Vector2(1, 0);
+				bullet.Speed = mainBullet.Speed;
+				bullet.Init(transform, direction, multipulPower * 0.1f);
+				bullet.WaveInit(1, 1, i);
+			}
 		}
 
 		CurrentEnegry = 0;
