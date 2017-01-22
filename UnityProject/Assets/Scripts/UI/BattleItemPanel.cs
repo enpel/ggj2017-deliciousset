@@ -24,7 +24,7 @@ public class BattleItemPanel : MonoBehaviour {
 		RelayoutCurrentTechnorogys ();
 		TechnologyManager.Instance.currentTechnologys.ObserveReplace ().Subscribe (
 			x => {
-				Debug.Log(x.Key+" : "+ x.NewValue);
+				//Debug.Log(x.Key+" : "+ x.NewValue);
 				RelayoutOneItem(new KeyValuePair<TechnologyType, int>(x.Key,x.NewValue));
 			}
 		);
