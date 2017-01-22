@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114737977293153718}
   - component: {fileID: 114078325402302360}
   - component: {fileID: 114694888151796102}
-  - component: {fileID: 61605622079062138}
+  - component: {fileID: 61829750512683352}
   m_Layer: 9
   m_Name: Enemy2
   m_TagString: Enemy
@@ -48,7 +48,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &61605622079062138
+--- !u!61 &61829750512683352
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -61,7 +61,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 75, y: 75}
+  m_Size: {x: 62, y: 50}
 --- !u!114 &114078325402302360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d2704bb2a2540b4ac951416a45c110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 6
+  MaxHP: 0.2
 --- !u!114 &114401771413114022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,8 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c591af83603ab48cb9eb3cbf7fda075c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackArea: 14
-  deadSE: 11
+  attackArea: 12
+  deadSE: 10
   deadEffectPrefab: {fileID: 0}
 --- !u!114 &114464319942007448
 MonoBehaviour:
@@ -107,7 +107,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b9ada4b542d540b4a990c1e3d9465300, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 843448fa5a8deb648909650124ccf068, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  Speed: 10
+  Speed: 60
 --- !u!222 &222612662841838902
 CanvasRenderer:
   m_ObjectHideFlags: 1
