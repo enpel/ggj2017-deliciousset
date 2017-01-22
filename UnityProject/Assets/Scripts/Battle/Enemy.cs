@@ -68,5 +68,12 @@ public class Enemy : MonoBehaviour
 		var damage = bullet.CurrentPower;
 		hp.OnDamage(damage);
 		Debug.Log(string.Format("{0}は{1}に{2}ポイントのダメージ{3}", other.name, gameObject.name, damage, hp.ToDisplayString()));
+		// 弾にあたって死んだ時のみ、スコアが増える
+		if (hp.IsDead.Value)
+		{
+			// 後でスコアを敵ごとに設定する
+			var score = 1;
+			GameManager.Instance.Score.Value += score;
+		}
 	}
 }
