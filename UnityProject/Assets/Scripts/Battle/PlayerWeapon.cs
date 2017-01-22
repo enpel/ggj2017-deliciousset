@@ -85,15 +85,23 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 			// オプショナルの弾を生成
 			for (var i = 0; i < optionalBulletNum; i++)
 			{
-				var bullet = InstantiateBullet(optionalBulletPrefab).GetComponent<WaveBullet>();
-				var direction = new Vector2(1, 0);
-				bullet.Speed = mainBullet.Speed;
-				bullet.Init(transform, direction, multipulPower * 0.1f);
-				bullet.WaveInit(1, 1, i);
+				var optionalPower = multipulPower * 0.1f;
+				StartCoroutine(GenerateOptionalBullet(i * 0.03f, optionalBulletPrefab, mainBullet.Speed, optionalPower, i));
 			}
 		}
 
 		CurrentEnegry = 0;
+	}
+
+	IEnumerator GenerateOptionalBullet(float delayTime, GameObject prefab, float speed, float power, int index)
+	{
+		yield return new WaitForSeconds(delayTime);
+
+		var bullet = InstantiateBullet(prefab).GetComponent<WaveBullet>();
+		var direction = new Vector2(1, 0);
+		bullet.Speed = speed;
+		bullet.Init(transform, direction, power);
+		bullet.WaveInit(30 + index, index + 4, Mathf.PI / 8);
 	}
 
 	BulletBase InstantiateBullet(GameObject bulletPrefab)
