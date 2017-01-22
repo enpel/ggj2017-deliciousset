@@ -14,6 +14,6 @@ MonoBehaviour:
   _data:
     rank: 2
     spawnRate: 4
-    lifeTime: 45
-    next: 3
-    bgmIds: 03000000
+    lifeTime: 60
+    next: 0
+    bgmIds: 0500000006000000

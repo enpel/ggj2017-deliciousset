@@ -12,6 +12,9 @@ public enum SoundId
 	ggj01_01,
 	ggj01_02,
 	ggj02_01,
+	ggj02_02,
+	ggj03_01,
+	ggj03_02,
 
 	BgmEnd,
 	SeStart,
