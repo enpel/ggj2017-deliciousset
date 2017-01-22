@@ -21,6 +21,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
 	// Use this for initialization
 	void Start () {
+		TechnologyManager.Instance.Initialize();
+
 		uiManager.SwitchPhase (UIPhase.NONE);
 		State.Pairwise().Subscribe(statePair => {
 			if (statePair.Previous != null)
