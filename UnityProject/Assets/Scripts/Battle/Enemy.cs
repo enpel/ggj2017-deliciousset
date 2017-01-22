@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
 			var effectTrans = go.transform;
 			effectTrans.SetParent(transform.parent);	// 弾は消えるので親オブジェクトに関連付ける
 			effectTrans.localPosition = transform.localPosition;
-			effectTrans.localScale = Vector3.one;
+			effectTrans.localScale = Vector3.one * Mathf.Sqrt(baseScore); // 敵によってエフェクトの大きさを変更してみる
 		}
 
 		this.GetComponent<Collider2D>().enabled = false;
