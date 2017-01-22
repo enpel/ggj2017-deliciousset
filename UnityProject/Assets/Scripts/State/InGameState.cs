@@ -90,7 +90,9 @@ public class InGameState : SceneState
 				currentThreatData = threatData.FirstOrDefault (x => x.Data.rank == currentRank);
 				WaveStep.Value++;
 
-				var id = currentThreatData.Data.bgmIds.ElementAtOrDefault (UnityEngine.Random.Range (0, currentThreatData.Data.bgmIds.Count));
+				var id = currentThreatData.Data.bgmIds.ElementAtOrDefault(0);
+				if (WaveStep.Value > (int)ThreatRank.Rank3)
+					id = currentThreatData.Data.bgmIds.ElementAtOrDefault (UnityEngine.Random.Range (0, currentThreatData.Data.bgmIds.Count));
 
 				SoundManager.Instance.Play (id);
 			}
