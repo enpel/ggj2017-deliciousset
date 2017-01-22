@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
 		weapon = GetComponent<IWeapon>();
 		move = GetComponent<Move>();
 		hp = GetComponent<Hp>();
+		hp.MaxHP *= GameManager.Instance.Inflation;
 
 		hp.IsDead.Where(dead => dead)
 			.Subscribe(_ => OnDead())

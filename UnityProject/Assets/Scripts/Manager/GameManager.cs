@@ -18,6 +18,14 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
 	public ReactiveProperty<int> Wave = new ReactiveProperty<int>(1);
 	public ReactiveProperty<int> Score = new ReactiveProperty<int>(0);
+	public float Inflation
+	{
+		get
+		{
+			var wave = Wave.Value - 1;
+			return Mathf.Pow(1.15f, wave);
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
