@@ -42,7 +42,9 @@ public class UIManager : SingletonMonoBehaviour<UIManager> {
 	{
 		if (onClickRetry == null)
 		{
-			onClickRetry = button_retry.OnClickAsObservable();
+			onClickRetry = button_retry.OnClickAsObservable ().Where (
+				_ => button_retry.gameObject.activeInHierarchy
+			);
 		}
 		return onClickRetry;
 	}
@@ -85,13 +87,25 @@ public class UIManager : SingletonMonoBehaviour<UIManager> {
 			group_ingame.SetActive (false);
 			group_gameover.SetActive (true);
 			group_gameclear.SetActive (false);
+			button_retry.gameObject.SetActive (false);
+			Invoke ("DisplayRetryButton", 3);
 			break;
 		case UIPhase.GAMECLEAR:
 			group_title.SetActive (false);
 			group_ingame.SetActive (false);
 			group_gameover.SetActive (false);
 			group_gameclear.SetActive (true);
+			button_backtotitle.gameObject.SetActive (false);
+			Invoke ("DisplayBackToTitleButton", 3);
 			break;
 		}
+	}
+	void DisplayRetryButton()
+	{
+		button_retry.gameObject.SetActive (true);
+	}
+	void DisplayBackToTitleButton()
+	{
+		button_backtotitle.gameObject.SetActive (true);
 	}
 }

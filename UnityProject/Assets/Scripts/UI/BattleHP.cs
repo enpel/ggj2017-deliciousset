@@ -11,18 +11,37 @@ public class BattleHP : MonoBehaviour {
 	RectTransform rt;
 	// Use this for initialization
 	void Start () {
-		rt = GetComponent<RectTransform> ();
-		player = transform.parent.parent.GetComponent<Player> ();
-		player.hp.CurrentHP.Subscribe (
-			f => {
-				Debug.Log ("CurrentHP:" + f.ToString ());
-				float p = f / player.hp.MaxHP;
-				rt.localScale = new Vector3 (p, 1, 1);
-			}
-		).AddTo(this);
+
 	}
 	
 	// Update is called once per frame
+	void OnEnable()
+	{
+		rt = GetComponent<RectTransform> ();
+		Invoke ("SubscribeHPStream", 1f);
+	}
+	void SubscribeHPStream()
+	{
+		Debug.Log ("SubscribeHPStream");
+
+		foreach(GameObject go in Object.FindObjectsOfType(typeof(GameObject)))
+		{
+			Player pl = go.GetComponent<Player> ();
+			if (pl == null)
+				continue;
+			
+			//player = transform.parent.parent.GetComponent<Player> ();
+			pl.hp.CurrentHP.Subscribe (
+				f => {
+					Debug.Log ("CurrentHP:" + f.ToString ());
+					float p = f / pl.hp.MaxHP;
+					rt.localScale = new Vector3 (p, 1, 1);
+				}
+			).AddTo(this);
+			break;
+		}
+
+	}
 	void Update () {
 		
 	}
