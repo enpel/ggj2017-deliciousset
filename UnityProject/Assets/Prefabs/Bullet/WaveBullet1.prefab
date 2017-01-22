@@ -183,13 +183,15 @@ MonoBehaviour:
   requireEnergy: 0
   BasePower: 5
   Speed: 3000
-  ShotSE: 31
+  ShotSE: 34
   HitSE: 26
   PowerTechnology: 6
   OptionalTechnology: 6
   optionalBulletPrefab: {fileID: 0}
   hitEffectPrefab: {fileID: 1074870613806596, guid: 5d7c72882789a5045845b8f863c6416d,
     type: 2}
+  baseFrequency: 1
+  baseAmplitude: 1
   Amplitude: 0
   Frequency: 0
   Phase: 0
