@@ -11,6 +11,9 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
 		Walker,
 		Army,
 		BossGigant,
+		Runner,
+		ZakoMan,
+		BossTotem,
 	}
 	
 	[Serializable]

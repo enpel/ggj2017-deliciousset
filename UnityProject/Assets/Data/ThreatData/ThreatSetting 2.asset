@@ -16,4 +16,4 @@ MonoBehaviour:
     spawnRate: 2
     lifeTime: 45
     next: 3
-    bgmIds: 01000000
+    bgmIds: 03000000
