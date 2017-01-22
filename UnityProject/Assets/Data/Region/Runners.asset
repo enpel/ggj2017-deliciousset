@@ -19,3 +19,7 @@ MonoBehaviour:
       spawnLocalPosition: {x: -6, y: 0, z: 0}
     - enemyId: 3
       spawnLocalPosition: {x: -7, y: 0, z: 0}
+    - enemyId: 3
+      spawnLocalPosition: {x: -8, y: 0, z: 0}
+    - enemyId: 3
+      spawnLocalPosition: {x: 4, y: 0, z: 0}
