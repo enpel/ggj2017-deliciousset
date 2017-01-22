@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
 		if (hp.IsDead.Value)
 		{
 			// 後でスコアを敵ごとに設定する
-			var score = (int)Mathf.Max(1, baseScore * Mathf.Sqrt(hp.CurrentHP.Value));
+			var score = (int)Mathf.Max(1, baseScore * hp.MaxHP * move.Speed * 0.1f);
 			GameManager.Instance.Score.Value += score;
 			// 敵を倒すと必ずアイテムを入手できる
 			if ((baseScore - Random.Range (0, 5)) > 0) {
