@@ -13,6 +13,8 @@ public class BattleItem : MonoBehaviour {
 	public TechnologyType technorogytype { get; set; }
 	public int value{ get; set; }
 
+	public Sprite[] sprites;
+
 	void Start () {
 		
 	}
@@ -24,6 +26,29 @@ public class BattleItem : MonoBehaviour {
 	}
 	public void Refresh()
 	{
-		havecountText.text = "x " + value.ToString ();
+		switch (technorogytype) {
+		case TechnologyType.EnegryChargeRate:
+			itemIcon.overrideSprite = sprites [0];
+			break;
+		case TechnologyType.PowerUpBasicBullet1:
+			itemIcon.overrideSprite = sprites [1];
+			break;
+		case TechnologyType.OptionalBasicBullet1:
+			itemIcon.overrideSprite = sprites [2];
+			break;
+		case TechnologyType.PowerUpBasicBullet2:
+			itemIcon.overrideSprite = sprites [3];
+			break;
+		case TechnologyType.OptionalBasicBullet2:
+			itemIcon.overrideSprite = sprites [4];
+			break;
+		case TechnologyType.PowerUpBasicBullet3:
+			itemIcon.overrideSprite = sprites [5];
+			break;
+		case TechnologyType.OptionalBasicBullet3:
+			itemIcon.overrideSprite = sprites [6];
+			break;
+		}
+		havecountText.text = value.ToString ();
 	}
 }
