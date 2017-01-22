@@ -40,7 +40,7 @@ public class WaveBullet : BulletBase
 		GenerateTrailEffectPrefab();
 	}
 
-	void Update()
+	void FixedUpdate()
 	{
 		time += Time.deltaTime;
 
