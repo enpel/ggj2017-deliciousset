@@ -14,6 +14,5 @@ MonoBehaviour:
   _data:
     rank: 0
     regions:
+    - {fileID: 11400000, guid: 6baffcdbdddaa4ac0b35f047e5573aef, type: 2}
     - {fileID: 11400000, guid: dfbd8867dbb6f4c1b9f163910f4bc912, type: 2}
-    - {fileID: 11400000, guid: 3f62d4162cd2941d8a463310e7f12029, type: 2}
-    - {fileID: 11400000, guid: b0a7e6562a7844a7bb70238ccc627bad, type: 2}

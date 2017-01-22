@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     spawnData:
-    - enemyId: 2
+    - enemyId: 4
       spawnLocalPosition: {x: 0, y: 0, z: 0}
     - enemyId: 3
       spawnLocalPosition: {x: 0, y: 0, z: 0}
