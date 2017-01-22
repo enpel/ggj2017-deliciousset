@@ -101,7 +101,7 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 		var direction = new Vector2(1, 0);
 		bullet.Speed = speed;
 		bullet.Init(transform, direction, power);
-		bullet.WaveInit(30 + index, index + 4, Mathf.PI / 8);
+		bullet.WaveInit(15 + index, index + 4, Mathf.PI / 8);
 	}
 
 	BulletBase InstantiateBullet(GameObject bulletPrefab)

@@ -190,7 +190,8 @@ MonoBehaviour:
   optionalBulletPrefab: {fileID: 0}
   hitEffectPrefab: {fileID: 1074870613806596, guid: 5d7c72882789a5045845b8f863c6416d,
     type: 2}
-  baseFrequency: 0.6
+  baseFrequency: 0.7
+  baseAmplitude: 0.7
   Amplitude: 0
   Frequency: 0
   Phase: 0

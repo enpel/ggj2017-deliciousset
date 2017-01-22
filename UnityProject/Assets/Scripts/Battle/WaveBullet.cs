@@ -6,6 +6,7 @@ public class WaveBullet : BulletBase
 {
 	[SerializeField] GameObject hitEffectPrefab;
 	[SerializeField] float baseFrequency = 1;
+	[SerializeField] float baseAmplitude = 1;
 
 	private Rigidbody2D bulletRigidbody;
 
@@ -43,7 +44,7 @@ public class WaveBullet : BulletBase
 	{
 		time += Time.deltaTime;
 
-		var scalar = Amplitude * Mathf.Sin(time * Frequency * baseFrequency);
+		var scalar = Amplitude * baseAmplitude * Mathf.Sin(time * Frequency * baseFrequency);
 		var force = new Vector2(0, 1) * scalar;
 		var pos = new Vector3(0, force.y, 0);
 
