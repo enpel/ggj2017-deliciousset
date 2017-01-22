@@ -31,7 +31,7 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 	{
 		get
 		{
-			return 1 + TechnologyManager.Instance.currentTechnologys[TechnologyType.EnegryChargeRate] * 0.1f;
+			return 1 + TechnologyManager.Instance.currentTechnologys[TechnologyType.EnegryChargeRate] * 0.033f;
 		}
 	}
 
