@@ -677,7 +677,7 @@ Prefab:
     - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
         type: 2}
       propertyPath: enemies.Array.size
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
         type: 2}
@@ -816,6 +816,39 @@ Prefab:
       propertyPath: enemies.Array.data[2].enemyId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
+        type: 2}
+      propertyPath: enemies.Array.data[3].enemyId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
+        type: 2}
+      propertyPath: enemies.Array.data[3].enemyPrefab
+      value: 
+      objectReference: {fileID: 1484369692098240, guid: 832abc72438594c93b4de518e7380c96,
+        type: 2}
+    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
+        type: 2}
+      propertyPath: enemies.Array.data[4].enemyId
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
+        type: 2}
+      propertyPath: enemies.Array.data[4].enemyPrefab
+      value: 
+      objectReference: {fileID: 1484369692098240, guid: 8bb48c03b52d0470b80d18705892f005,
+        type: 2}
+    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
+        type: 2}
+      propertyPath: enemies.Array.data[5].enemyId
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
+        type: 2}
+      propertyPath: enemies.Array.data[5].enemyPrefab
+      value: 
+      objectReference: {fileID: 1484369692098240, guid: bf9646ce489a84d04b810bf2fc94b7fe,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d311673492c4343fe997b2dd10037570, type: 2}
   m_IsPrefabParent: 0
