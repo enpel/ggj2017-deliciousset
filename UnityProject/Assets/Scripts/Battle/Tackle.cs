@@ -15,6 +15,8 @@ public class Tackle : BulletBase
 	void Update()
 	{
 		// 敵と同じ位置に移動する
+		if (trans == null) return;
+		if (shooter == null) return;
 		trans.localPosition = shooter.localPosition;
 	}
 
