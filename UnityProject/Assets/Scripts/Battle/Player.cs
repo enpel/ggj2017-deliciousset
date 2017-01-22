@@ -13,6 +13,12 @@ public class Player : MonoBehaviour
 		weapon = GetComponent<PlayerWeapon>();
 		hp = GetComponent<Hp>();
 
+		hp.IsDead.Where(dead => dead)
+			.Subscribe(dead =>
+				{
+					Debug.Log("Playerがやられたので、多分ゲームオーバーだと思う。");
+					this.GetComponent<Collider2D>().enabled = false;
+				}).AddTo(this);
 	}
 
 	void Start()
