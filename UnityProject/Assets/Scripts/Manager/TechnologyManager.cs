@@ -2,29 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
-public class TechnologyManager : MonoBehaviour
-{
-	int technologyPoint = 0;
-	public void DevelopTechnology()
-	{
-		var develop = UnityEngine.Random.Range (0, 1);
-
-		if (develop == 0)
-			return;
-		
-		Debug.Log ("成功しました");
-		technologyPoint++;
-	}
-}
+using UniRx;
+using Random = UnityEngine.Random;
 
 public enum TechnologyType
 {
-	PowerUpBullet,
+	PowerUpBasicBullet1,
+	PowerUpBasicBullet2,
+	PowerUpBasicBullet3,
+	EnegryChargeRate,
 }
 
-[Serializable]
-public class TechnologySetting
+// テクノロジー
+// アプリを終了したら消える
+// 次のゲームには引き継がれる
+public class TechnologyManager : SingletonMonoBehaviour<TechnologyManager>
 {
-	public TechnologyType technologyType;
+	public ReactiveDictionary<TechnologyType, int> currentTechnologys = new ReactiveDictionary<TechnologyType, int>();
+
+	public void Initialize()
+	{
+		for(var i = 0; i < Enum.GetNames(typeof(TechnologyType)).Length; i++)
+		{
+			var type = (TechnologyType)i;
+			currentTechnologys.Add(type, 0);
+		}
+	}
+
+	public void AddRandomTechnology(float num)
+	{
+		// 端数の確率を加味した数値に変換
+		var addNum = (int)(num + Random.Range(0, 1));
+
+		// 同じものを一気に取得するような感じ
+		var type = (TechnologyType)Random.Range(0, Enum.GetNames(typeof(TechnologyType)).Length);
+		currentTechnologys[type] += addNum;
+	}
 }
