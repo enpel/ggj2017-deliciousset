@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114078325402302360}
   - component: {fileID: 114694888151796102}
   - component: {fileID: 61829750512683352}
+  - component: {fileID: 50419879250252112}
   m_Layer: 9
   m_Name: Enemy4
   m_TagString: Enemy
@@ -48,6 +49,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!50 &50419879250252112
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484369692098240}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61829750512683352
 BoxCollider2D:
   m_ObjectHideFlags: 1
