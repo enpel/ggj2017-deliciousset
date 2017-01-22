@@ -17,7 +17,7 @@ public class BasicBullet : BulletBase
 	{
 		OnStart();
 
-		trans.localScale = Vector3.one * Mathf.Sqrt(startScale);
+		trans.localScale = Vector3.one * startScale * 0.57f;
 
 		bulletRigidbody = GetComponent<Rigidbody2D>();
 		bulletRigidbody.AddForce(direction * Speed);
