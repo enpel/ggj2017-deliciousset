@@ -60,6 +60,9 @@ public class BulletBase : MonoBehaviour, IBullet
 
 	void LateUpdate()
 	{
+		if (trans == null) return;
+		if (this.gameObject == null) return;
+
 		if (trans.localPosition.x < -200 || trans.localPosition.x > 1500 )
 		{
 			Destroy (this.gameObject);
