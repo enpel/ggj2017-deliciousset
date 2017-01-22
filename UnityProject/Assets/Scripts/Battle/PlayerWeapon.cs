@@ -23,6 +23,13 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 	public float MaxEnegry = 5;
 	public float BaseEnegryChargeRate = 2;
 
+	public float ChargeRateForTechnology {
+		get
+		{
+			return 1 + TechnologyManager.Instance.currentTechnologys[TechnologyType.EnegryChargeRate] * 0.1f;
+		}
+	}
+
 	float _currentEnergy = 0;
 	public float CurrentEnegry
 	{
@@ -44,7 +51,7 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 
 	void Update()
 	{
-		CurrentEnegry += BaseEnegryChargeRate * Time.deltaTime;
+		CurrentEnegry += BaseEnegryChargeRate * ChargeRateForTechnology * Time.deltaTime;
 	}
 
 	public void Shot()
