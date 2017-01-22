@@ -122,8 +122,8 @@ MonoBehaviour:
   requireEnergy: 0
   BasePower: 5
   Speed: 3000
-  ShotSE: 25
-  HitSE: 26
+  ShotSE: 30
+  HitSE: 31
   Color: {r: 1, g: 1, b: 1, a: 1}
   PowerTechnology: 0
   OptionalTechnology: 3

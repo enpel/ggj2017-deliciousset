@@ -184,7 +184,8 @@ MonoBehaviour:
   BasePower: 5
   Speed: 3000
   ShotSE: 34
-  HitSE: 26
+  HitSE: 31
+  Color: {r: 0, g: 0, b: 0, a: 0}
   PowerTechnology: 6
   OptionalTechnology: 6
   optionalBulletPrefab: {fileID: 0}

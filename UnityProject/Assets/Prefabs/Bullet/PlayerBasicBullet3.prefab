@@ -123,7 +123,7 @@ MonoBehaviour:
   BasePower: 30
   Speed: 1500
   ShotSE: 21
-  HitSE: 22
+  HitSE: 27
   Color: {r: 0.8604463, g: 1, b: 0.36764705, a: 1}
   PowerTechnology: 2
   OptionalTechnology: 5
