@@ -8,12 +8,13 @@ public class TitleState : SceneState
 	[SerializeField]
 	SceneState nextState;
 	IObservable<Unit> battleStartStream;
-	
+
 	public override void Initialize()
 	{
 		UIManager.Instance.SwitchPhase (UIPhase.TITLE);
 		if (battleStartStream == null) {
 			battleStartStream = UIManager.Instance.GetOnClickStartStream ()
+				.Merge(MyInput.GetInputStream())
 				.Publish ()
 				.RefCount ();
 			battleStartStream.Subscribe (x => {

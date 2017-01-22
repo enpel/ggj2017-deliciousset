@@ -65,19 +65,19 @@ public class InGameState : SceneState
 		float spawnTime = 0;
 		float lastTime = Time.time;
 		while (currentRank != ThreatRank.EndIt && !player.hp.IsDead.Value) {
-			Debug.Log ("totalTime: " + totalTime);
 			var deltaTime = Time.time - lastTime;
 			lastTime = Time.time;
 			totalTime += deltaTime;
 			spawnTime += deltaTime;
 
 			if (spawnTime > currentThreatData.Data.spawnRate) {
-				waveManager.SpawnCurrentThreatWave ();
+				waveManager.SpawnCurrentThreatWave ().ForEach(x => x.hp.IsDead.First(isDead => isDead).Subscribe(isDead => GameManager.Instance.TechnologyManager.DevelopTechnology()));
 				spawnTime -= currentThreatData.Data.spawnRate;
 			}
 
 			if (totalTime > currentThreatData.Data.lifeTime) {
 				currentRank = currentThreatData.Data.next;
+				waveManager.CurrentThreatRank.Value = currentRank;
 				totalTime = 0;
 				currentThreatData = threatData.FirstOrDefault (x => x.Data.rank == currentRank);
 

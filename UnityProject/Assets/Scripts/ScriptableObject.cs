@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using UnityEditor;
 using UnityEngine;
 
 public class ScriptableObject<T> : ScriptableObject
@@ -14,25 +13,30 @@ public class ScriptableObject<T> : ScriptableObject
 
 	public static void Create<T2>() where T2 : ScriptableObject<T>, new()
 	{
+		#if UNITY_EDITOR
 		var scriptableObject = new T2();
 
 		Debug.Log(typeof(T).Name);
 		var fileName = typeof(T).Name + ".asset";
 
-		var path = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(GetSelectingAssetDirectory(), fileName));
+		var path = UnityEditor.AssetDatabase.GenerateUniqueAssetPath(Path.Combine(GetSelectingAssetDirectory(), fileName));
 
-		AssetDatabase.CreateAsset(scriptableObject, path);
-		AssetDatabase.SaveAssets();
+		UnityEditor.AssetDatabase.CreateAsset(scriptableObject, path);
+		UnityEditor.AssetDatabase.SaveAssets();
+		#endif
 	}
 
+	#if UNITY_EDITOR
 	private static string GetSelectingAssetDirectory()
 	{
-		if (Selection.assetGUIDs.Length == 0) return "Assets";
+		if (UnityEditor.Selection.assetGUIDs.Length == 0) return "Assets";
 
-		var directoryPath = AssetDatabase.GUIDToAssetPath(Selection.assetGUIDs[0]);
+		var directoryPath = UnityEditor.AssetDatabase.GUIDToAssetPath(UnityEditor.Selection.assetGUIDs[0]);
 
 		return Directory.Exists(directoryPath)
 			? directoryPath
 				: Path.GetDirectoryName(directoryPath);
+
 	}
+	#endif
 }

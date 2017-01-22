@@ -10,7 +10,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 	UIManager uiManager;
 	[SerializeField]
 	SceneState defaultState;
-
+	[SerializeField]
+	TechnologyManager technologyManager;
+	public TechnologyManager TechnologyManager { get { return technologyManager; } }
 
 	public ReactiveProperty<IState> State = new ReactiveProperty<IState>();
 

@@ -4,7 +4,6 @@ using UnityEngine;
 using UniRx;
 using System;
 using System.Linq;
-using UnityEditor;
 
 public class WaveManager : MonoBehaviour {
 

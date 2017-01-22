@@ -674,6 +674,11 @@ Prefab:
       propertyPath: waveBGM.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
+        type: 2}
+      propertyPath: enemies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
         type: 2}
       propertyPath: threatData.Array.size
@@ -782,6 +787,33 @@ Prefab:
     - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
         type: 2}
       propertyPath: waveBGM.Array.data[2].soundId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114364572961247210, guid: d311673492c4343fe997b2dd10037570,
+        type: 2}
+      propertyPath: technologyManager
+      value: 
+      objectReference: {fileID: 767247131}
+    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
+        type: 2}
+      propertyPath: enemies.Array.data[1].enemyPrefab
+      value: 
+      objectReference: {fileID: 1484369692098240, guid: f8bda8109c7844cc5a77499644a4b492,
+        type: 2}
+    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
+        type: 2}
+      propertyPath: enemies.Array.data[2].enemyPrefab
+      value: 
+      objectReference: {fileID: 1484369692098240, guid: 53448952969dd41698c3af467ba493a6,
+        type: 2}
+    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
+        type: 2}
+      propertyPath: enemies.Array.data[1].enemyId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
+        type: 2}
+      propertyPath: enemies.Array.data[2].enemyId
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1092,13 +1124,24 @@ MonoBehaviour:
   spawnPosition: {fileID: 1049918920}
   waves:
   - {fileID: 11400000, guid: dd018973556664f5391a7a66a94cde47, type: 2}
-  - {fileID: 11400000, guid: dd018973556664f5391a7a66a94cde47, type: 2}
-  - {fileID: 11400000, guid: dd018973556664f5391a7a66a94cde47, type: 2}
+  - {fileID: 11400000, guid: 9effb0679ed47427cb27fd448c7e320a, type: 2}
+  - {fileID: 11400000, guid: ab874fdb682af4fa9a3e0637415e16d6, type: 2}
 --- !u!4 &767247130 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4940294990859256, guid: d311673492c4343fe997b2dd10037570,
     type: 2}
   m_PrefabInternal: {fileID: 413021628}
+--- !u!114 &767247131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 767247128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef34c86fedc484401bc7f7baf2ae020d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &819506905
 GameObject:
   m_ObjectHideFlags: 0

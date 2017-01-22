@@ -15,11 +15,11 @@ MonoBehaviour:
     spawnData:
     - enemyId: 0
       spawnLocalPosition: {x: 0, y: 0, z: 0}
-    - enemyId: 0
+    - enemyId: 1
       spawnLocalPosition: {x: 1, y: 0, z: 0}
     - enemyId: 0
       spawnLocalPosition: {x: 2, y: 0, z: 0}
-    - enemyId: 0
+    - enemyId: 1
       spawnLocalPosition: {x: 3, y: 0, z: 0}
     - enemyId: 0
       spawnLocalPosition: {x: 4, y: 0, z: 0}
