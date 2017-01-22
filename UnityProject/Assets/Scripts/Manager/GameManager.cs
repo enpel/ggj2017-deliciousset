@@ -16,8 +16,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
 	public ReactiveProperty<IState> State = new ReactiveProperty<IState>();
 
-	public ReactiveProperty<int> Wave = new ReactiveProperty<int>();
-	public ReactiveProperty<int> Score = new ReactiveProperty<int>();
+	public ReactiveProperty<int> Wave = new ReactiveProperty<int>(1);
+	public ReactiveProperty<int> Score = new ReactiveProperty<int>(0);
 
 	// Use this for initialization
 	void Start () {

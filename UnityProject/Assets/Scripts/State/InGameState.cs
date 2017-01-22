@@ -25,6 +25,13 @@ public class InGameState : SceneState
 	public ReactiveProperty<int> WaveStep = new ReactiveProperty<int>(0);
 	IDisposable waveDisposer;
 
+	void Start()
+	{
+		WaveStep.Subscribe(wave => {
+			GameManager.Instance.Wave.Value = (WaveStep.Value + 1);
+		});
+	}
+
 	public override void Initialize()
 	{
 		ClearWaveCount.Value = 0;
