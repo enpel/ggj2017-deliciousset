@@ -7,12 +7,16 @@ using UniRx.Triggers;
 
 public class BattleScore : MonoBehaviour {
 
-	Player player;
 	Text text;
 
 	// Use this for initialization
 	void Start () {
-		player = transform.parent.GetComponent<Player> ();
+		text = GetComponent<Text> ();
+		GameManager.Instance.Score.Subscribe (
+			i => {
+				text.text = i.ToString().PadLeft(5, '0');
+			}
+		);
 	}
 
 	// Update is called once per frame
