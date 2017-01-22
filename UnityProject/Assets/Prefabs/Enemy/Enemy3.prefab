@@ -88,7 +88,8 @@ MonoBehaviour:
   baseScore: 2
   attackArea: 14
   deadSE: 10
-  deadEffectPrefab: {fileID: 0}
+  deadEffectPrefab: {fileID: 1104064439926200, guid: de4b349740fa7de4db2e8a2e4507c5b6,
+    type: 2}
 --- !u!114 &114464319942007448
 MonoBehaviour:
   m_ObjectHideFlags: 1
