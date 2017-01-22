@@ -40,6 +40,8 @@ public class Enemy : MonoBehaviour
 			effectTrans.localPosition = transform.localPosition;
 			effectTrans.localScale = Vector3.one;
 		}
+
+		this.GetComponent<Collider2D>().enabled = false;
 		deadSE.Play();
 		Destroy(gameObject);
 	}
@@ -74,6 +76,8 @@ public class Enemy : MonoBehaviour
 			// 後でスコアを敵ごとに設定する
 			var score = 1;
 			GameManager.Instance.Score.Value += score;
+			// 上のIsDeadでもコライダーを外しているが、１フレーム遅れている可能性があるのでこの場でもコライダーを消す
+			this.GetComponent<Collider2D>().enabled = false;
 		}
 	}
 }
