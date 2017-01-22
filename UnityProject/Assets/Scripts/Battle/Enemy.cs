@@ -79,6 +79,10 @@ public class Enemy : MonoBehaviour
 			// 後でスコアを敵ごとに設定する
 			var score = (int)Mathf.Max(1, baseScore * Mathf.Sqrt(hp.CurrentHP.Value));
 			GameManager.Instance.Score.Value += score;
+			// 敵を倒すとアイテムを入手できる、かも
+			var getTechnologyNum = (float)Random.Range(0, baseScore);
+			TechnologyManager.Instance.AddRandomTechnology(getTechnologyNum);
+
 			// 上のIsDeadでもコライダーを外しているが、１フレーム遅れている可能性があるのでこの場でもコライダーを消す
 			this.GetComponent<Collider2D>().enabled = false;
 		}
