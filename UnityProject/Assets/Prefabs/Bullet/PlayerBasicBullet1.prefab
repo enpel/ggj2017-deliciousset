@@ -124,6 +124,9 @@ MonoBehaviour:
   ShotSE: 25
   HitSE: 26
   PowerTechnology: 0
+  OptionalTechnology: 3
+  optionalBulletPrefab: {fileID: 1216474593591098, guid: d204b4755bfaf4538b1ed6c15ea21012,
+    type: 2}
   hitEffectPrefab: {fileID: 1074870613806596, guid: 5d7c72882789a5045845b8f863c6416d,
     type: 2}
 --- !u!222 &222654103274389898

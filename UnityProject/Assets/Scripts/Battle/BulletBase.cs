@@ -14,6 +14,7 @@ public class BulletBase : MonoBehaviour, IBullet
 	// 初期値は関係のない物を設定しておく…（ゴミ実装だ…）
 	public TechnologyType PowerTechnology = TechnologyType.EnegryChargeRate;
 	public TechnologyType OptionalTechnology = TechnologyType.EnegryChargeRate;
+	public GameObject optionalBulletPrefab;
 
 	public float CurrentPower
 	{
