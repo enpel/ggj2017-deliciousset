@@ -32,13 +32,23 @@ public class TechnologyManager : SingletonMonoBehaviour<TechnologyManager>
 		}
 	}
 
-	public void AddRandomTechnology(float num)
+	public int AddRandomTechnology(float num)
 	{
 		// 端数の確率を加味した数値に変換
 		var addNum = (int)(num + Random.Range(0, 1));
 
+		if (addNum == 0) return 0;
+
 		// 同じものを一気に取得するような感じ
 		var type = (TechnologyType)Random.Range(0, Enum.GetNames(typeof(TechnologyType)).Length);
 		currentTechnologys[type] += addNum;
+
+		SoundId.ggj_se01.Play(0, sc =>{
+			sc.ChangePitchScale(3);
+		});
+
+		Debug.Log(string.Format("{0}を{1}個入手しました。", type, addNum));
+
+		return addNum;
 	}
 }
