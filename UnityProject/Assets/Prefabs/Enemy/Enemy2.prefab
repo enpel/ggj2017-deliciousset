@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c591af83603ab48cb9eb3cbf7fda075c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseScore: 1
   attackArea: 12
   deadSE: 10
   deadEffectPrefab: {fileID: 0}

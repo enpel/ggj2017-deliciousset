@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
 	public Hp hp {get; private set;}
 
 	[SerializeField]
+	private int baseScore;
+
+	[SerializeField]
 	private float attackArea; // 攻撃する範囲
 	[SerializeField]
 	private SoundId deadSE; // やられた時に鳴る音
@@ -74,7 +77,7 @@ public class Enemy : MonoBehaviour
 		if (hp.IsDead.Value)
 		{
 			// 後でスコアを敵ごとに設定する
-			var score = 1;
+			var score = (int)Mathf.Max(1, baseScore * Mathf.Sqrt(hp.CurrentHP.Value));
 			GameManager.Instance.Score.Value += score;
 			// 上のIsDeadでもコライダーを外しているが、１フレーム遅れている可能性があるのでこの場でもコライダーを消す
 			this.GetComponent<Collider2D>().enabled = false;
