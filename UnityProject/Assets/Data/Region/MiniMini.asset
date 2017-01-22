@@ -9,17 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a339a2e2cbfb2436597a535f801fca2e, type: 3}
-  m_Name: EnemyRegion 7
+  m_Name: MiniMini
   m_EditorClassIdentifier: 
   _data:
     spawnData:
-    - enemyId: 3
-      spawnLocalPosition: {x: -5, y: 0, z: 0}
-    - enemyId: 3
-      spawnLocalPosition: {x: -6, y: 0, z: 0}
-    - enemyId: 3
-      spawnLocalPosition: {x: -7, y: 0, z: 0}
-    - enemyId: 3
-      spawnLocalPosition: {x: -0, y: 0, z: 0}
-    - enemyId: 3
+    - enemyId: 1
+      spawnLocalPosition: {x: 0, y: 0, z: 0}
+    - enemyId: 1
       spawnLocalPosition: {x: 1, y: 0, z: 0}

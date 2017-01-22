@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     rank: 1
-    spawnRate: 3
-    lifeTime: 45
+    spawnRate: 4.5
+    lifeTime: 35
     next: 2
     bgmIds: 02000000
