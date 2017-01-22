@@ -183,7 +183,7 @@ MonoBehaviour:
   requireEnergy: 0
   BasePower: 5
   Speed: 3000
-  ShotSE: 25
+  ShotSE: 31
   HitSE: 26
   PowerTechnology: 6
   OptionalTechnology: 6
