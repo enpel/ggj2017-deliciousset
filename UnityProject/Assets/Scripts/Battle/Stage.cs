@@ -7,7 +7,7 @@ public class Stage : MonoBehaviour
 {
 	List<ParticleSystem> particles;
 
-	void Start()
+	void Awake()
 	{
 		particles = GetComponentsInChildren<ParticleSystem>().ToList();
 	}
