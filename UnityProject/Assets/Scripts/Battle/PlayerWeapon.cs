@@ -83,6 +83,7 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 		{
 			var direction = new Vector2(1, 0);
 			mainBullet.Init(transform, new Vector2(1, 0), multipulPower);
+			mainBullet.SetScaleData(CurrentEnegry);
 		}
 
 		if (optionalBulletPrefab != null)

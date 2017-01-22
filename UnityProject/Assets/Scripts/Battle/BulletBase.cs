@@ -28,6 +28,7 @@ public class BulletBase : MonoBehaviour, IBullet
 	protected Transform trans;
 	protected Transform target;
 	protected Vector2 direction;
+	protected float startScale;
 
 	public void Init(Transform shooter, Transform target, float multipliePower)
 	{
@@ -41,6 +42,11 @@ public class BulletBase : MonoBehaviour, IBullet
 		this.shooter = shooter;
 		this.multipliePower = multipliePower;
 		this.direction = direction;
+	}
+
+	public void SetScaleData(float startScale)
+	{
+		this.startScale = startScale;
 	}
 
 	public void GenerateTrailEffectPrefab()

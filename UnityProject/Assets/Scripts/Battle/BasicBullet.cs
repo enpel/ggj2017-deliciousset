@@ -8,20 +8,26 @@ public class BasicBullet : BulletBase
 
 	private Rigidbody2D bulletRigidbody;
 
-	void SetSize()
+	void UpdateSize()
 	{
-		trans.localScale = Vector3.one * Mathf.Sqrt(CurrentPower);
+		trans.localScale = Vector3.Lerp(trans.localScale, Vector3.one * Mathf.Sqrt(CurrentPower),0.05f);
 	}
 
 	void Start()
 	{
 		OnStart();
 
-		SetSize();
+		trans.localScale = Vector3.one * Mathf.Sqrt(startScale);
+
 		bulletRigidbody = GetComponent<Rigidbody2D>();
 		bulletRigidbody.AddForce(direction * Speed);
 
 		GenerateTrailEffectPrefab();
+	}
+
+	void Update()
+	{
+		UpdateSize();
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
