@@ -77,6 +77,7 @@ public class InGameState : SceneState
 
 			if (totalTime > currentThreatData.Data.lifeTime) {
 				currentRank = currentThreatData.Data.next;
+				waveManager.CurrentThreatRank.Value = currentRank;
 				totalTime = 0;
 				currentThreatData = threatData.FirstOrDefault (x => x.Data.rank == currentRank);
 
