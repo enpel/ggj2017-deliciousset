@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114462933970936502}
   - component: {fileID: 114286717490672028}
   m_Layer: 5
-  m_Name: Item
+  m_Name: BattleItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,6 +60,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   havecountText: {fileID: 114890928789681376}
   itemIcon: {fileID: 114366890860570340}
+  sprites:
+  - {fileID: 21300000, guid: 5bc1618e2f2ed8747894278ea6e4853b, type: 3}
+  - {fileID: 21300000, guid: c92778e7cabb8644794a20d071d883df, type: 3}
+  - {fileID: 21300000, guid: b7cc8cbac9124814b9d35bc1912896f6, type: 3}
+  - {fileID: 21300000, guid: 3bae2db9c0240194ebd2086ade17a9bd, type: 3}
+  - {fileID: 21300000, guid: 8e8db2b485e22f74e85acab40d518561, type: 3}
+  - {fileID: 21300000, guid: fa78c81ef036bef4f8098b70562f407e, type: 3}
+  - {fileID: 21300000, guid: 192af75fe511784449742a1a7b5e13fc, type: 3}
 --- !u!114 &114366890860570340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79,7 +87,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e2f42597d96402d47aa21f39a7b7d9f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5bc1618e2f2ed8747894278ea6e4853b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -126,18 +134,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 17b660dd226178c46a1511122b7e9ead, type: 3}
-    m_FontSize: 64
+    m_FontSize: 128
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 64
+    m_MinSize: 1
+    m_MaxSize: 128
     m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: x999
+  m_Text: 999
 --- !u!222 &222144200979427028
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -184,6 +192,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 53, y: -145.7}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -145.7}
+  m_SizeDelta: {x: 256, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
