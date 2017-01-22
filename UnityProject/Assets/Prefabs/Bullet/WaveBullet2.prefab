@@ -188,7 +188,7 @@ MonoBehaviour:
   PowerTechnology: 6
   OptionalTechnology: 6
   optionalBulletPrefab: {fileID: 0}
-  hitEffectPrefab: {fileID: 1074870613806596, guid: 5d7c72882789a5045845b8f863c6416d,
+  hitEffectPrefab: {fileID: 1074870613806596, guid: 99341abecbf3f264f9c43515fe2077ad,
     type: 2}
   baseFrequency: 0.5
   baseAmplitude: 0.5
