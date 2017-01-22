@@ -88,6 +88,7 @@ public class InGameState : SceneState
 				waveManager.CurrentThreatRank.Value = currentRank;
 				totalTime = 0;
 				currentThreatData = threatData.FirstOrDefault (x => x.Data.rank == currentRank);
+				WaveStep.Value++;
 
 				var id = currentThreatData.Data.bgmIds.ElementAtOrDefault (UnityEngine.Random.Range (0, currentThreatData.Data.bgmIds.Count));
 
