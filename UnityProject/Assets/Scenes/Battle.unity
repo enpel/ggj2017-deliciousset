@@ -470,7 +470,7 @@ Prefab:
     - target: {fileID: 224330262716896150, guid: e5bb294975b7c1f40bec3914ccf0a244,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -128
       objectReference: {fileID: 0}
     - target: {fileID: 224330262716896150, guid: e5bb294975b7c1f40bec3914ccf0a244,
         type: 2}
@@ -664,21 +664,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: waveBGM.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: enemies.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: threatData.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4940294990859256, guid: d311673492c4343fe997b2dd10037570, type: 2}
       propertyPath: m_LocalPosition.x
       value: 133.48514
@@ -711,6 +696,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114364572961247210, guid: d311673492c4343fe997b2dd10037570,
+        type: 2}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 42269472}
     - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
         type: 2}
       propertyPath: defaultPlayerPosition
@@ -721,129 +711,16 @@ Prefab:
       propertyPath: defaultEnemySpawnPosition
       value: 
       objectReference: {fileID: 1049918920}
-    - target: {fileID: 114364572961247210, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: uiManager
-      value: 
-      objectReference: {fileID: 42269472}
     - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
         type: 2}
-      propertyPath: waveManager
+      propertyPath: battleHP
       value: 
-      objectReference: {fileID: 767247129}
-    - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
+      objectReference: {fileID: 1416399266}
+    - target: {fileID: 114911786073740362, guid: d311673492c4343fe997b2dd10037570,
         type: 2}
-      propertyPath: nextState
+      propertyPath: spawnPosition
       value: 
-      objectReference: {fileID: 1775349625}
-    - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: waveBGM.Array.data[0].soundId
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: waveBGM.Array.data[1].soundId
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: waveBGM.Array.data[1].waveRank
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: gameOverState
-      value: 
-      objectReference: {fileID: 1775349625}
-    - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: threatData.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 677d0b6b648ab4053b32196d41b516c8,
-        type: 2}
-    - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: threatData.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2dab0dfa14dff4c5ba60d014c71cd8cf,
-        type: 2}
-    - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: threatData.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8b52e292b4f9543558c9a29b1530d391,
-        type: 2}
-    - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: waveBGM.Array.data[2].waveRank
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114951712068212940, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: waveBGM.Array.data[2].soundId
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114364572961247210, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: technologyManager
-      value: 
-      objectReference: {fileID: 767247131}
-    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: enemies.Array.data[1].enemyPrefab
-      value: 
-      objectReference: {fileID: 1484369692098240, guid: f8bda8109c7844cc5a77499644a4b492,
-        type: 2}
-    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: enemies.Array.data[2].enemyPrefab
-      value: 
-      objectReference: {fileID: 1484369692098240, guid: 53448952969dd41698c3af467ba493a6,
-        type: 2}
-    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: enemies.Array.data[1].enemyId
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: enemies.Array.data[2].enemyId
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: enemies.Array.data[3].enemyId
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: enemies.Array.data[3].enemyPrefab
-      value: 
-      objectReference: {fileID: 1484369692098240, guid: 832abc72438594c93b4de518e7380c96,
-        type: 2}
-    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: enemies.Array.data[4].enemyId
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: enemies.Array.data[4].enemyPrefab
-      value: 
-      objectReference: {fileID: 1484369692098240, guid: 8bb48c03b52d0470b80d18705892f005,
-        type: 2}
-    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: enemies.Array.data[5].enemyId
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114425892333254598, guid: d311673492c4343fe997b2dd10037570,
-        type: 2}
-      propertyPath: enemies.Array.data[5].enemyPrefab
-      value: 
-      objectReference: {fileID: 1484369692098240, guid: bf9646ce489a84d04b810bf2fc94b7fe,
-        type: 2}
+      objectReference: {fileID: 1049918920}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d311673492c4343fe997b2dd10037570, type: 2}
   m_IsPrefabParent: 0
@@ -1009,43 +886,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &767247128 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1715673152434594, guid: d311673492c4343fe997b2dd10037570,
-    type: 2}
-  m_PrefabInternal: {fileID: 413021628}
---- !u!114 &767247129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 767247128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 305849a4a91e1472c81a49588a754e69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPosition: {fileID: 1049918920}
-  waves:
-  - {fileID: 11400000, guid: dd018973556664f5391a7a66a94cde47, type: 2}
-  - {fileID: 11400000, guid: 9effb0679ed47427cb27fd448c7e320a, type: 2}
-  - {fileID: 11400000, guid: ab874fdb682af4fa9a3e0637415e16d6, type: 2}
---- !u!4 &767247130 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4940294990859256, guid: d311673492c4343fe997b2dd10037570,
-    type: 2}
-  m_PrefabInternal: {fileID: 413021628}
---- !u!114 &767247131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 767247128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef34c86fedc484401bc7f7baf2ae020d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &819506905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1915,12 +1755,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -171}
   m_SizeDelta: {x: 384, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1558807575 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114858982542366528, guid: d311673492c4343fe997b2dd10037570,
-    type: 2}
-  m_PrefabInternal: {fileID: 413021628}
-  m_Script: {fileID: 11500000, guid: f13c65fc6bafb4781baa1b4f85e2cf39, type: 3}
 --- !u!1 &1646318406
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,47 +1852,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1775349623
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1775349624}
-  - component: {fileID: 1775349625}
-  m_Layer: 0
-  m_Name: GameOver
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1775349624
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1775349623}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 767247130}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1775349625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1775349623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 058974502aba14097803dab5db79171f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextState: {fileID: 1558807575}
 --- !u!224 &1777567765 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224330262716896150, guid: e5bb294975b7c1f40bec3914ccf0a244,

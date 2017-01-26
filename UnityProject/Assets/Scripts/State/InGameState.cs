@@ -18,9 +18,11 @@ public class InGameState : SceneState
 	[SerializeField]
 	WaveManager waveManager;
 	[SerializeField]
+	BattleHP battleHP;
+	[SerializeField]
 	List<ThreatData> threatData = new List<ThreatData>();
 
-	Player player;
+	public Player player{ get; private set;}
 	public ReactiveProperty<int> ClearWaveCount = new ReactiveProperty<int>(0);
 	public ReactiveProperty<int> WaveStep = new ReactiveProperty<int>(0);
 	IDisposable waveDisposer;
@@ -45,6 +47,8 @@ public class InGameState : SceneState
 		player = GameObject.Instantiate (playerPrefab, defaultPlayerPosition).GetComponent<Player>();
 		player.transform.localPosition = Vector3.zero;
 		player.transform.localScale = Vector3.one;
+
+		battleHP.SubscribeHPStream(player);
 
 		StartNextWave ();
 	}
