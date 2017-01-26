@@ -23,6 +23,12 @@ public class WaveBullet : BulletBase
 		Phase = phase;
 	}
 
+	public void EnableCollider()
+	{
+		var collider = this.GetComponent<Collider2D>();
+		collider.enabled = true;
+	}
+
 	void SetSize()
 	{
 		trans.localScale = Vector3.one * Mathf.Sqrt(CurrentPower);

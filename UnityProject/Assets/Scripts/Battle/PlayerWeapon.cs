@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UniRx;
 
 public class PlayerWeapon : MonoBehaviour , IWeapon
 {
@@ -92,14 +93,14 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 			for (var i = 0; i < optionalBulletNum; i++)
 			{
 				var optionalPower = multipulPower * 0.1f;
-				StartCoroutine(GenerateOptionalBullet(i * 0.03f, optionalBulletPrefab, mainBullet.Speed, optionalPower, i));
+				StartCoroutine(GenerateOptionalBullet(i * 0.03f, optionalBulletPrefab, mainBullet.Speed, optionalPower, i, mainBullet.IsDead));
 			}
 		}
 
 		CurrentEnegry = 0;
 	}
 
-	IEnumerator GenerateOptionalBullet(float delayTime, GameObject prefab, float speed, float power, int index)
+	IEnumerator GenerateOptionalBullet(float delayTime, GameObject prefab, float speed, float power, int index, ReactiveProperty<bool> isParentDead)
 	{
 		yield return new WaitForSeconds(delayTime);
 
@@ -108,6 +109,19 @@ public class PlayerWeapon : MonoBehaviour , IWeapon
 		bullet.Speed = speed;
 		bullet.Init(transform, direction, power);
 		bullet.WaveInit(15 + index, index + 4, Mathf.PI / 8);
+		if (isParentDead != null)
+		{
+			isParentDead.Subscribe(dead => {
+				if (dead)
+				{
+					bullet.EnableCollider();
+				}
+			});
+		}
+		else
+		{
+			bullet.EnableCollider();
+		}
 	}
 
 	BulletBase InstantiateBullet(GameObject bulletPrefab)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class BulletBase : MonoBehaviour, IBullet
 {
@@ -17,6 +18,8 @@ public class BulletBase : MonoBehaviour, IBullet
 	public TechnologyType PowerTechnology = TechnologyType.EnegryChargeRate;
 	public TechnologyType OptionalTechnology = TechnologyType.EnegryChargeRate;
 	public GameObject optionalBulletPrefab;
+
+	public ReactiveProperty<bool> IsDead = new ReactiveProperty<bool>(false);
 
 	public float CurrentPower
 	{
@@ -63,6 +66,11 @@ public class BulletBase : MonoBehaviour, IBullet
 	{
 		trans = transform;
 		ShotSE.Play();
+	}
+
+	void OnDestroy()
+	{
+		IsDead.Value = true;
 	}
 
 	void LateUpdate()

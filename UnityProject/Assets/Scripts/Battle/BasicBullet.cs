@@ -42,7 +42,6 @@ public class BasicBullet : BulletBase
 		}
 
 		HitSE.Play();
-
 		Destroy(this.gameObject);
 	}
 }
