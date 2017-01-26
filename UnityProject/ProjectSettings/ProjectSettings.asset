@@ -9,7 +9,7 @@ PlayerSettings:
   defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
-  accelerometerFrequency: 60
+  accelerometerFrequency: 0
   companyName: ggj2017bxj-delicious
   productName: TameWave
   defaultCursor: {fileID: 0}
@@ -53,15 +53,15 @@ PlayerSettings:
   m_ActiveColorSpace: 0
   m_MTRendering: 1
   m_MobileMTRendering: 0
-  m_StackTraceTypes: 010000000100000001000000010000000100000001000000
+  m_StackTraceTypes: 000000000000000000000000000000000000000001000000
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
   tizenShowActivityIndicatorOnLoading: -1
   iosAppInBackgroundBehavior: 0
   displayResolutionDialog: 1
   iosAllowHTTPDownload: 1
-  allowedAutorotateToPortrait: 1
-  allowedAutorotateToPortraitUpsideDown: 1
+  allowedAutorotateToPortrait: 0
+  allowedAutorotateToPortraitUpsideDown: 0
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
@@ -135,7 +135,7 @@ PlayerSettings:
   apiCompatibilityLevel: 2
   stripEngineCode: 1
   iPhoneStrippingLevel: 0
-  iPhoneScriptCallOptimization: 0
+  iPhoneScriptCallOptimization: 1
   iPhoneBuildNumber: 0
   ForceInternetPermission: 0
   ForceSDCardPermission: 0
@@ -153,7 +153,7 @@ PlayerSettings:
   tvOSTargetOSVersionString: 
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
-  uIRequiresFullScreen: 1
+  uIRequiresFullScreen: 0
   uIStatusBarHidden: 1
   uIExitOnSuspend: 0
   uIStatusBarStyle: 0
@@ -382,7 +382,8 @@ PlayerSettings:
   webGLUseWasm: 0
   webGLCompressionFormat: 1
   scriptingDefineSymbols: {}
-  platformArchitecture: {}
+  platformArchitecture:
+    iOS: 1
   scriptingBackend: {}
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
