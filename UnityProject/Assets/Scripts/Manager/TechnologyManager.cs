@@ -47,7 +47,7 @@ public class TechnologyManager : SingletonMonoBehaviour<TechnologyManager>
 			sc.ChangePitchScale(3);
 		});
 
-		Debug.Log(string.Format("{0}を{1}個入手しました。", type, addNum));
+		//Debug.Log(string.Format("{0}を{1}個入手しました。", type, addNum));
 
 		return addNum;
 	}
